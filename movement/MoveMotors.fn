@@ -1,0 +1,36 @@
+ /*
+ * MoveMotors.fn ~ bool moveMotors(float tr, float tl, float br, float bl)
+ * Alex Jones for team 5105 Buffalo Wings
+ * 
+ * Description: 	Sets all drive motors with one function
+ * 
+ * Takes:			- float tr ~ value for the top-right motor
+ * 					- float tl ~ value for the top-left motor
+ * 					- float br ~ value for the bottom-right motor
+ * 					- float bl ~ value for the bottom-left motor
+ * 
+ * Returns:			- (bool) if all values are between 100 and -100
+ * 
+ * Uses: 			Motor changing function to access all drive motors
+ * 					simultaneously.
+ * 
+ * Dependancies:	motors/SetMotor.fn | movement/Stop.fn
+ * 
+ * ~licensed under the GNU GPLv3 license included in this repositiory
+*/
+
+bool moveMotors(float tr, float tl, float br, float bl)
+{
+	bool success = true;
+	success = setMotor(topRight, tr);
+	if(success) success = setMotor(topLeft, tl);
+	if(success) success = setMotor(bottomRight, br);
+	if(success) success = setMotor(bottomLeft, bl);
+	
+	if(!success)
+	{
+		stop();
+		return false;
+	}
+	return true;
+}

@@ -11,6 +11,8 @@
  * Uses: 			any time where we need to find the value of a motor
  * 
  * Dependancies:	NONE
+ * 
+ * ~licensed under the GNU GPLv3 license included in this repositiory
 */
 
 void getMotor(int motorname)

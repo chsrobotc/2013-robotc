@@ -1,0 +1,25 @@
+/*
+ * SetMotor.fn ~ void setMotor(int motor, int value)
+ * Alex Jones for team 5105 Buffalo Wings
+ * 
+ * Description: 	Sets the value of a specific motor to a value provided
+ * 
+ * Takes:			- int motorname ~ the motor to be altered
+ * 					- int value ~ the value to be applied to the motor
+ * 
+ * Returns:			- (bool) if the value is between 100 and -100
+ * 
+ * Uses: 			General motor changing for most other functions
+ * 
+ * Dependancies:	NONE
+*/
+
+bool setMotor(int motorname, int value)
+{
+	if(value >= 100 && value <= -100)
+	{
+		motor[motorname] = value;
+		return true;
+	}
+	return false;
+}

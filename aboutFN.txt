@@ -1,0 +1,9 @@
+* About the ".fn" filename
+
+Forword: The use of .fn files throughout this code is not a standard C practice
+so I decided I would explain decision to use this.
+
+Explaination: The .fn files hold an individual function with RobotC syntax
+to allow for further seperation and organization of the code. The fn files are
+brought together by a single "All.h" function in each subdirectory that
+include all .fn files in that said directory to be used by the main program.

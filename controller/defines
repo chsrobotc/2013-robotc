@@ -11,3 +11,7 @@
  * ~licensed under the GNU GPLv3 license included in this repositiory
 */
 
+#define A_BUTTON 2
+#define B_BUTTON 3
+#define X_BUTTON 1
+#define Y_BUTTON 4

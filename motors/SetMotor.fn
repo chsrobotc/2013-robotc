@@ -16,9 +16,9 @@
  * ~licensed under the GNU GPLv3 license included in this repositiory
 */
 
-bool setMotor(int motorname, float value)
+bool setMotor(tMotor motorname, float value)
 {
-	if(value >= 100 && value <= -100)
+	if(value <= 100 && value >= -100)
 	{
 		motor[motorname] = value;
 		return true;

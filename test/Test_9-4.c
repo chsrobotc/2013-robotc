@@ -29,8 +29,12 @@ task main()
 {
 	while(true)
 	{
-		initController();
-		twoMotors(getJoystick(1, 1, 'x'), getJoystick(1, 1, 'y'));
+		//initController();
+		//setMotor(topLeft, 30);
+		getJoystickSettings(joystick);
+		//nxtDisplayTextLine(3, "%i",getJoystick(1, 1, 'y'));
+		//nxtDisplayTextLine(4, "%i",joystick.joy1_y1);
+		twoMotors(getJoystick(1, 2, 'y')/1.28, getJoystick(1, 1, 'y')/1.28);
 	}
 	return;
 }

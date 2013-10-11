@@ -1,18 +1,32 @@
 /*
- * ScaleJoystick.fn ~ float scaleJoystick(float joyvalue, int scaletype)
+ * JoystickMove.fn ~ bool joystickMove(int sticknum, int min, int max, int scale)
  * Alex Jones for team 5105 Buffalo Wings
- * 
- * Description: 	scales the value sent by a joystick to be used by motors
- * 
- * Takes:			- float joyvalue ~ the value of the joystick to be scaled
- * 					- int scaletype ~ the type of scale to be used as defined
- * 					by constants in the file /etc/scales.var
- * 
- * Returns:			- (float) the altered value between 100 and -100
- * 
- * Uses: 			Any transformation between joysticks and motors
- * 
- * Dependancies:	NONE
- * 
+ *
+ * Description: 	modifies the values found by a joystick into a vector movement of the robot
+ *
+ * Takes:			- int sticknum ~ the number identifier for what stick to read from
+ *						- int min ~ the minimum value accepted by the joystick
+ * 						- int max ~ the highest value possible for the motor
+ * 						- int scale ~ as defined in etc/Scales.var
+ *
+ * Returns:			- (bool) true for success, false for failure
+ *
+ * Uses: 			for use driving the robot and making the interface easily usable
+ *
+ * Dependancies:	IDK
+ *
  * ~licensed under the GNU GPLv3 license included in this repositiory
 */
+
+bool joystickMove(int sticknum, int min, int max, int scale)
+{
+	float xval = getJoystick(1, sticknum, 'x');
+	float yval = getJoystick(1, sticknum, 'y');
+
+	if(xval < min && xval > -min && yval < min && yval > -min) return false;
+
+	float rval = yval - xval;
+	float lval = yval + xval;
+
+	return twoMotors(rval, lval);
+}

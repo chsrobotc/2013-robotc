@@ -7,5 +7,6 @@
  * ~licensed under the GNU GPLv3 license included in this repositiory
 */
 
-#include "../GetMotor.fn"
-#include "../SetMotor.fn"
+#include "../Scales.var"
+#include "../ScaleJoystick.fn"
+#include "../Clamp.fn"

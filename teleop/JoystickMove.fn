@@ -1,0 +1,18 @@
+/*
+ * ScaleJoystick.fn ~ float scaleJoystick(float joyvalue, int scaletype)
+ * Alex Jones for team 5105 Buffalo Wings
+ * 
+ * Description: 	scales the value sent by a joystick to be used by motors
+ * 
+ * Takes:			- float joyvalue ~ the value of the joystick to be scaled
+ * 					- int scaletype ~ the type of scale to be used as defined
+ * 					by constants in the file /etc/scales.var
+ * 
+ * Returns:			- (float) the altered value between 100 and -100
+ * 
+ * Uses: 			Any transformation between joysticks and motors
+ * 
+ * Dependancies:	NONE
+ * 
+ * ~licensed under the GNU GPLv3 license included in this repositiory
+*/

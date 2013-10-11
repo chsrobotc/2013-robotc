@@ -1,5 +1,5 @@
 /*
- * SetMotor.fn ~ void setMotor(int motor, float value)
+ * SetMotor.fn ~ bool setMotor(int motor, float value)
  * Alex Jones for team 5105 Buffalo Wings
  *
  * Description: 	Sets the value of a specific motor to a value provided

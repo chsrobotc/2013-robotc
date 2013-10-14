@@ -20,13 +20,15 @@
 
 bool joystickMove(int sticknum, int min, int max, int scale)
 {
-	float xval = getJoystick(1, sticknum, 'x');
-	float yval = getJoystick(1, sticknum, 'y');
+	float xval = getJoystick(1, sticknum, 'x')/1.28;
+	float yval = getJoystick(1, sticknum, 'y')/1.28;
 
-	if(xval < min && xval > -min && yval < min && yval > -min) return false;
+	//if(xval < min && xval > -min && yval < min && yval > -min) return false;
 
 	float rval = yval - xval;
 	float lval = yval + xval;
 
-	return twoMotors(rval, lval);
+	clamp(rval, -100, 100);
+	clamp(lval, -100, 100);
+	return twoMotors(lval,rval);
 }

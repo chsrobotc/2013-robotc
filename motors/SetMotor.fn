@@ -23,5 +23,15 @@ bool setMotor(tMotor motorname, float value)
 		motor[motorname] = value;
 		return true;
 	}
+	else if(value > 100)
+	{
+		motor[motorname] = 100;
+		return true;
+	}
+	else if(value < -100)
+	{
+		motor[motorname] = -100;
+		return true;
+	}
 	return false;
 }

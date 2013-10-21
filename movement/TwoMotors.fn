@@ -23,6 +23,11 @@
 
 bool twoMotors(float r, float l)
 {
+	if(r == 0 && l == 0)
+	{
+		stop();
+		return false;
+	}
 	bool success = true;
 	success = setMotor(topRight, r);
 	if(success) success = setMotor(topLeft, l);

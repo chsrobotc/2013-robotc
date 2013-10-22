@@ -1,3 +1,4 @@
+#pragma once
 /*
  * SetMotor.fn ~ bool setMotor(int motor, float value)
  * Alex Jones for team 5105 Buffalo Wings

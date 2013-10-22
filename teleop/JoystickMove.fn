@@ -38,5 +38,5 @@ bool joystickMove(int sticknum, int min, int max, int scale)
 	rval = clamp(rval, -100, 100);
 	lval = clamp(lval, -100, 100);
 
-	return twoMotors(lval,rval);
+	return setSides(rval, lval);
 }

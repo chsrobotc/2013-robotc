@@ -19,6 +19,9 @@
  * ~licensed under the GNU GPLv3 license included in this repositiory
 */
 
+#include "../motors/SetMotor.fn"
+#include "../movement/Stop.fn"
+
 bool moveMotors(float tr, float tl, float br, float bl)
 {
 	bool success = true;

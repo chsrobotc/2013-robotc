@@ -1,18 +1,17 @@
- 
- /*
- * TwoMotors.fn ~ bool twoMotors(float r, float l)
+#pragma once
+/*
+ * SetSides.fn ~ bool setSides(float r, float l)
  * Alex Jones for team 5105 Buffalo Wings
  *
- * Description: 	Sets both drive motors with one function
- * 					* for use with testing...
+ * Description: 	Sets the 4-wheel drive motors with right and left values
  *
- * Takes:			- float r ~ value for the right motor
- * 					- float l ~ value for the left motor
+ * Takes:			- float r ~ value for the right side
+ * 					- float l ~ value for the left side
  *
  * Returns:			- (bool) if all values are between 100 and -100
  *
  * Uses: 			Motor changing function to access all drive motors
- * 					simultaneously.
+ * 					simultaneously through sides
  *
  * Dependancies:	motors/SetMotor.fn | movement/Stop.fn
  *
@@ -22,16 +21,13 @@
 #include "../motors/SetMotor.fn"
 #include "../movement/Stop.fn"
 
-bool twoMotors(float r, float l)
+bool setSides(float r, float l)
 {
-	if(r == 0 && l == 0)
-	{
-		stop();
-		return false;
-	}
 	bool success = true;
 	success = setMotor(topRight, r);
 	if(success) success = setMotor(topLeft, l);
+	if(success) success = setMotor(bottomRight, r);
+	if(success) success = setMotor(bottomLeft, l);
 
 	if(!success)
 	{

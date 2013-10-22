@@ -15,7 +15,7 @@
  *
  * Dependancies:	motors/SetMotor.fn | movement/Stop.fn
  *
- * ~licensed under the GNU GPLv3 license included in this repositiory
+ * ~licensed under the MIT license included in this repositiory
 */
 
 #include "../motors/SetMotor.fn"

@@ -14,7 +14,7 @@
  *
  * Dependancies:	NONE
  *
- * ~licensed under the GNU GPLv3 license included in this repositiory
+ * ~licensed under the MIT license included in this repositiory
 */
 
 bool setMotor(tMotor motorname, float value)

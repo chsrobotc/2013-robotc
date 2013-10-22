@@ -1,3 +1,4 @@
+#pragma once
 /*
  * JoystickMove.fn ~ bool joystickMove(int sticknum, int min, int max, int scale)
  * Alex Jones for team 5105 Buffalo Wings
@@ -13,10 +14,15 @@
  *
  * Uses: 			for use driving the robot and making the interface easily usable
  *
- * Dependancies:	IDK, many things
+ * Dependancies:	controller/GetJoystick.fn | etc/Clamp.fn | etc/ScaleJoystick.fn | movement/SetSides.fn
  *
- * ~licensed under the GNU GPLv3 license included in this repositiory
+ * ~licensed under the MIT license included in this repositiory
 */
+
+#include "../controller/GetJoystick.fn"
+#include "../etc/Clamp.fn"
+#include "../etc/ScaleJoystick.fn"
+#include "../movement/SetSides.fn"
 
 bool joystickMove(int sticknum, int min, int max, int scale)
 {

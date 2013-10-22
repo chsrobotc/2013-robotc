@@ -17,7 +17,7 @@
  *
  * Dependancies:	NONE
  *
- * ~licensed under the GNU GPLv3 license included in this repositiory
+ * ~licensed under the MIT license included in this repositiory
 */
 #include "JoystickDriver.c"
 #include "../motors/SetMotor.fn"

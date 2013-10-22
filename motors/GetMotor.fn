@@ -1,3 +1,4 @@
+#pragma once
  /*
  * GetMotor.fn ~ int getMotor(int motorname)
  * Alex Jones for team 5105 Buffalo Wings
@@ -12,7 +13,7 @@
  * 
  * Dependancies:	NONE
  * 
- * ~licensed under the GNU GPLv3 license included in this repositiory
+ * ~licensed under the MIT license included in this repositiory
 */
 
 void getMotor(int motorname)

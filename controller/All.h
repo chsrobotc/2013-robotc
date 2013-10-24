@@ -8,6 +8,6 @@
  * ~licensed under the MIT license included in this repositiory
 */
 
-#include "../controller/defines"
+#include "../controller/Defines.var"
 #include "../controller/GetJoystick.fn"
 #include "../controller/InitController.fn"

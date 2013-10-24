@@ -1,0 +1,27 @@
+#pragma once
+ /*
+ * CheckButton.fn ~ bool checkButton(int value, int joysticknum)
+ * Alex Jones for team 5105 Buffalo Wings
+ *
+ * Description: 	checks to see if a button is pushed
+ *
+ * Takes:			- int value ~ the value of the button defined by /defines
+ * 					- int joysticknum ~ the joystick to get tested
+ *
+ * Returns:			- (bool) true on pushed, false on not
+ *
+ * Uses: 			To check button values for all remote control needs
+ *
+ * Dependancies:	controller/Defines.var
+ *
+ * ~licensed under the MIT license included in this repositiory
+*/
+
+#include "../controller/Defines.var"
+
+bool checkButton(int value, int joysticknum)
+{
+	if(joysticknum == 1) return joy1Btn(value);
+	else if(joysticknum == 2) return joy2Btn(value);
+	else return false;
+}

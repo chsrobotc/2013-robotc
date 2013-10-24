@@ -1,6 +1,6 @@
 #pragma once
  /*
- * defines
+ * defines.var
  * Alex Jones for team 5105 Buffalo Wings
  * 
  * Description: 	sets the constants for the controllers
@@ -42,9 +42,3 @@
 //Analogue stick buttons
 #define LEFT_STICK 10
 #define RIGHT_STICK 11
-
-
-
-
-
-

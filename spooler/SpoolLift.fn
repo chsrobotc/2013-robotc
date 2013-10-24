@@ -1,0 +1,35 @@
+#pragma once
+/*
+ * SpoolLift.fn ~ bool SpoolLift(int speed)
+ * Ian Powell for team 5105 Buffalo Wings
+ *
+ * Description: 	Allows for two lift motors to act as one lift.
+ *
+ * Takes:			- int speed ~ ..
+ *
+ * Returns:			- (bool) true for success, false for failure
+ *
+ * Uses: 			for use moving the lift and making that interface usable
+ *
+ * Dependancies:	spooler/SpoolLift.fn 
+ *
+ * ~licensed under the MIT license included in this repositiory
+*/
+
+#include "../motors/SetMotor.fn"
+
+
+bool spoolerLift(float value)
+{
+	if(value <= 100 && value >= -100)
+	{
+		setMotor(spool_1, value)
+		setMotor(spool_2, value)
+		return true;
+	}
+	else
+	{
+		setMotor(spool_1, 0)
+		setMotor(spool_2, 0)
+		return false;
+	}

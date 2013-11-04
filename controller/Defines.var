@@ -1,0 +1,44 @@
+#pragma once
+ /*
+ * defines.var
+ * Alex Jones for team 5105 Buffalo Wings
+ * 
+ * Description: 	sets the constants for the controllers
+ * 
+ * Uses: 			Easily access all the controller buttons
+ * 
+ * Dependencies:	NONE
+ * 
+ * ~licensed under the MIT license included in this repository
+*/
+
+//Action buttons definitions 
+#define A_BUTTON 01
+#define B_BUTTON 02
+#define X_BUTTON 00
+#define Y_BUTTON 03
+
+//D-Pad Definitions
+#define DPAD -1
+#define N_DPAD 0
+#define NE_DPAD 1
+#define E_DPAD 2
+#define SE_DPAD 3
+#define S_DPAD 4
+#define SW_DPAD 5
+#define W_DPAD 6
+#define NW_DPAD 7
+
+//Trigger and Bumper definitions
+#define L_BUMPER 04
+#define R_BUMPER 05
+#define L_TRIGGER 06
+#define R_TRIGGER 07
+
+//menu buttons
+#define BACK_BUTTON 08
+#define START_BUTTON 09
+
+//Analogue stick buttons
+#define LEFT_STICK 10
+#define RIGHT_STICK 11

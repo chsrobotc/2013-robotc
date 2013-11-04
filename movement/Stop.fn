@@ -1,3 +1,4 @@
+#pragma once
  /*
  * Stop.fn ~ void stop()
  * Alex Jones for team 5105 Buffalo Wings
@@ -12,14 +13,16 @@
  *
  * Dependancies:	motors/SetMotor.fn
  *
- * ~licensed under the GNU GPLv3 license included in this repositiory
+ * ~licensed under the MIT license included in this repositiory
 */
+
+#include "../motors/SetMotor.fn"
 
 void stop()
 {
 	setMotor(topRight, 0);
 	setMotor(topLeft, 0);
-	//setMotor(bottomRight, 0);
-	//setMotor(bottomLeft, 0);
+	setMotor(bottomRight, 0);
+	setMotor(bottomLeft, 0);
 	return;
 }

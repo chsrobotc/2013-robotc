@@ -1,3 +1,4 @@
+#pragma once
 /*
  * SetMotor.fn ~ bool setMotor(int motor, float value)
  * Alex Jones for team 5105 Buffalo Wings
@@ -13,7 +14,7 @@
  *
  * Dependancies:	NONE
  *
- * ~licensed under the GNU GPLv3 license included in this repositiory
+ * ~licensed under the MIT license included in this repositiory
 */
 
 bool setMotor(tMotor motorname, float value)

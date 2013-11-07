@@ -17,7 +17,8 @@ task main()
 
 	while(true)
 	{
-		tButtons nBtn;
+		string sTemp;
+		TButtons nBtn;
 		if(nBtn == nNxtButtonPressed)
 		{
 			switch(nBtn)

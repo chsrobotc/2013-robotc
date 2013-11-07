@@ -1,0 +1,33 @@
+ #pragma once
+/*
+ * NxtButton.fn ~ bool nxtButton(tControllerButtons btn)
+ * Alex Jones for team 5105 Buffalo Wings
+ *
+ * Description: 	Checks to see if a button on the nxt is pressed
+ *
+ * Takes:			- tControllerButtons btn ~ the button as defined by the constants in this file
+ *
+ * Returns:			- (bool) true for pressed, false for not
+ *
+ * Uses:			mainly for the test platform and any other testing requirements
+ *
+ * Dependancies:	NONE
+ *
+ * ~licensed under the MIT license included in this repositiory
+*/
+
+#define NXT_NONE kButtonNone
+#define NXT_RIGHT kButtonRight
+#define NXT_LEFT kButtonLeft
+#define NXT_SELECT kButtonCenter
+#define NXT_BACK kButtonExit
+
+bool nxtButton(tControllerButtons btn)
+{
+	nNxtButtonTask = -2;
+	nNxtExitClicks = 3;
+
+	tButtons nBtn;
+	if(nBtn == btn) return true;
+	return false;
+}

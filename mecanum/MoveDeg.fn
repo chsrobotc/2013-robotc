@@ -1,0 +1,65 @@
+ #pragma once
+ /*
+ * MoveDeg.fn ~ bool moveDeg(float magnitude, float direction)
+ * Alex Jones for team 5105 Buffalo Wings
+ * 
+ * Description: 	Sets all drive motors with one function
+ * 
+ * Takes:			- float magnitude ~ the amount from 0 to 100 to step the motors with
+ * 					- float direction ~ direction of movement in degrees
+ * 						* 0 is forward, 90 is right, -90 is left, and 180 or -180 is backwards
+ * 
+ * Returns:			- (bool) if the inputs make sense and work
+ * 
+ * Uses: 			movement in any direction without needing to turn
+ * 
+ * Dependancies:	motors/SetMotor.fn | movement/Stop.fn | movement/MoveMotors.fn
+ * 
+ * ~licensed under the MIT license included in this repositiory
+*/
+
+#include "../motors/SetMotor.fn"
+#include "../movement/Stop.fn"
+#include "../movement/MoveMotors.fn"
+
+bool moveDeg(float magnitude, float direction)
+{
+	// this is a difficult problem...
+	
+	// topRight = topLeft; bottomLeft = bottomRight; always to remain unrotated
+	
+	//so 0 is forward so as magnitude approches 90, the top motors ease down to -100 to balance the forward vector
+	
+	float dirStep = (direction / 90) * 2;
+	if(dirStep < 0) dirStep = -dirStep; // who needs abs functions...
+	float topMod, bottomMod;
+	if(direction >= 0 && direction <= 180) // to the right
+	{
+		if(direction < 90)
+		{
+			topMod = magnitude - (magnitude * dirStep);
+			bottomMod = magnitude;
+		}
+		else
+		{
+			topMod = -magnitude;
+			BottomMode = magnitude - (magnitude * dirStep);
+		}
+	}
+	else if(direction < 0 && direction >= 180) // to the left
+	{
+		if(direction < 90)
+		{
+			topMod = magnitude;
+			bottomMod = magnitude - (magnitude * dirStep);
+		}
+		else
+		{
+			topMod = magnitude - (magnitude * dirStep);
+			BottomMode = -magnitude;
+		}
+	}
+	else return false; // direction is not valid
+	
+	return setMotors(topMod, topMod, bottomMod, bottomMod);
+}

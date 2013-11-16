@@ -2,22 +2,21 @@
 /*
  * InitController.fn ~ bool initController()
  * Alex Jones for team 5105 Buffalo Wings
- * 
+ *
  * Description: 	initializes the controllers
- * 
+ *
  * Takes:			NONE
- * 
+ *
  * Returns:			- (bool) true on success
- * 
+ *
  * Uses: 			a place to add controller init code
- * 
+ *
  * Dependancies:	JoystickDriver.c (external)
- * 
+ *
  * ~licensed under the MIT license included in this repositiory
 */
-#ifndef "JoystickDriver.c"
+
 #include "JoystickDriver.c"
-#endif
 
 bool initController()
 {

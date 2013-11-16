@@ -1,0 +1,38 @@
+#pragma once
+/*
+ * SetMotor.fn ~ bool setMotor(int motor, float value)
+ * Alex Jones for team 5105 Buffalo Wings
+ *
+ * Description: 	Sets the value of a specific motor to a value provided
+ *
+ * Takes:			- int motorname ~ the motor to be altered
+ * 					- float value ~ the value to be applied to the motor
+ *
+ * Returns:			- (bool) if the value is between 100 and -100
+ *
+ * Uses: 			General motor changing for most other functions
+ *
+ * Dependancies:	NONE
+ *
+ * ~licensed under the MIT license included in this repositiory
+*/
+
+bool setMotor(TServoIndex motorname, float value)
+{
+	if(value <= 100 && value >= -100)
+	{
+		servo[motorname] = value;
+		return true;
+	}
+	else if(value > 100)
+	{
+		servo[motorname] = 100;
+		return true;
+	}
+	else if(value < -100)
+	{
+		servo[motorname] = -100;
+		return true;
+	}
+	return false;
+}

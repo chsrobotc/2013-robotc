@@ -1,0 +1,24 @@
+#pragma once
+/*
+ * SetLiftVector.fn ~ bool setLiftVector(float mag)
+ * Alex Jones for team 5105 Buffalo Wings
+ *
+ * Description: 	sets the magnitude and direction of the lift
+ *
+ * Takes:			- float mag ~ the magnitude to be applied to the lift
+ *
+ * Returns:			- (bool) if the value is legit
+ *
+ * Uses: 			changing the overall height of the lifting stage
+ *
+ * Dependancies:	motor/SetMotor.fn | ...
+ *
+ * ~licensed under the MIT license included in this repositiory
+*/
+
+#include "../motor/SetMotor.fn"
+
+void setLiftVector(float mag)
+{
+	return setMotor(mainLift, mag);
+}

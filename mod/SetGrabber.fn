@@ -1,0 +1,24 @@
+#pragma once
+ /*
+ * SetGrabber.fn ~ bool setGrabber(float pos)
+ * Alex Jones for team 5105 Buffalo Wings
+ * 
+ * Description: 	sets the posisiton of the grabber for the endgame
+ * 
+ * Takes:			- float pos ~ the position the grabber should be set to
+ * 
+ * Returns:			- (bool) if all values are legit
+ * 
+ * Uses: 			To modify the position of the grabber for use in the endgame
+ * 
+ * Dependancies:	servo/SetServo.fn
+ * 
+ * ~licensed under the MIT license included in this repositiory
+*/
+
+#include "../servo/SetServo.fn"
+
+bool setGrabber(float pos)
+{
+	return setServo(grabber, pos);
+}

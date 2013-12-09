@@ -2,21 +2,21 @@
  /*
  * GetMotor.fn ~ int getMotor(int motorname)
  * Alex Jones for team 5105 Buffalo Wings
- * 
+ *
  * Description: 	Sets the value of a specific motor to a value provided
- * 
+ *
  * Takes:			- int motorname ~ the motor whos value is to be returned
- * 
+ *
  * Returns:			- (float) the value of the motor on a scale of 100 to -100
- * 
+ *
  * Uses: 			any time where we need to find the value of a motor
- * 
+ *
  * Dependancies:	NONE
- * 
+ *
  * ~licensed under the MIT license included in this repositiory
 */
 
-void getMotor(int motorname)
+float getMotor(int motorname)
 {
 	return motor[motorname];
 }

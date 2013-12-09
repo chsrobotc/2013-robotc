@@ -1,0 +1,25 @@
+ #pragma once
+/*
+ * SetFlag.fn ~ bool SetFlag(float mag)
+ * Alex Jones for team 5105 Buffalo Wings
+ *
+ * Description: 	sets the magnitude and direction of the flag rotater
+ *
+ * Takes:			- float mag ~ the magnitude to be applied to the rotation
+ *
+ * Returns:			- (bool) if the value is legit
+ *
+ * Uses: 			raising the flag during the endgame
+ *
+ * Dependancies:	motor/SetMotor.fn | ...
+ *
+ * ~licensed under the MIT license included in this repositiory
+*/
+
+#include "../motor/SetMotor.fn"
+
+void setFlag(float mag)
+{
+	return setMotor(flagLift, mag);
+}
+

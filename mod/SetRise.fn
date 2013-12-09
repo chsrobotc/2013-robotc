@@ -1,0 +1,24 @@
+#pragma once
+/*
+ * SetRise.fn ~ bool setRise(float mag)
+ * Alex Jones for team 5105 Buffalo Wings
+ *
+ * Description: 	sets the magnitude and direction of the endgame lift
+ *
+ * Takes:			- float mag ~ the magnitude to be applied to the lift
+ *
+ * Returns:			- (bool) if the value is legit
+ *
+ * Uses: 			allowing the robot to raise above the ground
+ *
+ * Dependancies:	motor/SetMotor.fn | ...
+ *
+ * ~licensed under the MIT license included in this repositiory
+*/
+
+#include "../motor/SetMotor.fn"
+
+void setRise(float mag)
+{
+	return setMotor(riseLift, mag);
+}

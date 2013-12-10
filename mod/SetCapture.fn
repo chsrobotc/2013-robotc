@@ -1,0 +1,24 @@
+#pragma once
+/*
+ * SetCapture.fn ~ bool setCapture(float mag)
+ * Alex Jones for team 5105 Buffalo Wings
+ *
+ * Description: 	sets the magnitude and direction of the mechanism that is used to capture and release the blocks
+ *
+ * Takes:			- float mag ~ the magnitude to be applied to the mechanism
+ *
+ * Returns:			- (bool) if the value is legit
+ *
+ * Uses: 			to trap and release blocks with eficiency
+ *
+ * Dependancies:	motor/SetMotor.fn | ...
+ *
+ * ~licensed under the MIT license included in this repositiory
+*/
+
+#include "../motor/SetMotor.fn"
+
+void setCapture(float mag)
+{
+	return setMotor(captureRight, mag) && setMotor(captureLeft, mag);
+}

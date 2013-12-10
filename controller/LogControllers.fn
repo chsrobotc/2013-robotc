@@ -1,0 +1,33 @@
+ #pragma once
+/*
+ * LogControllers.fn ~ bool logControllers(int controller, int state)
+ * Alex Jones for team 5105 Buffalo Wings
+ *
+ * Description: 	sets a controller (1, 2) to a mode (1=driving, 2=lift)
+ *
+ * Takes:			- int controller ~ the controller to be modified
+ *
+ * Returns:			- (bool) if the value is legit
+ *
+ * Uses: 			keeping track of the controller ins and outs
+ *
+ * Dependancies:	NXT file writing
+ *
+ * ~licensed under the MIT license included in this repositiory
+*/
+
+void logControllers(int controller, int state)
+{
+TFileHandle   hFileHandle;              // will keep track of our file
+  TFileIOResult nIOResult;                // will store our IO results
+  string        sFileName = "test.txt";   // the name of our file
+  int           nFileSize = 100;          // will store our file size 
+ 
+  byte CR = 0x13;   // define CR (carriage return)
+  byte LF = 0x10;   // define LF (line feed)
+ 
+  string        sMessageToWrite = "ROBOTC IO test!";    // we will write this to the file
+  string        sMesageToWrite_2 = "A new line!";       // we will also write this to the file on the next line
+  char          incommingChar;                          // this will store each char as we read back in from the file
+  string        incommingString[5];                     // this will store the final, fully-read strings (with new strings getting put into new indexes
+  int           nLineCounter = 0;  

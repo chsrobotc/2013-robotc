@@ -1,0 +1,20 @@
+#pragma once
+/*
+ * LiftControl.fn ~ bool liftControl()
+ * Alex Jones for team 5105 Buffalo Wings
+ *
+ * Description: 	controls the values of all of the lifts
+ *
+ * Takes:			- May add some later
+ *
+ * Returns:			- none really needed
+ *
+ * Uses: 			changing the overall height of the lifting stage
+ *
+ * Dependancies:	motor/SetMotor.fn | ...
+ *
+ * ~licensed under the MIT license included in this repositiory
+*/
+
+
+// * found it more convienient to just move to /threads/Lift.h

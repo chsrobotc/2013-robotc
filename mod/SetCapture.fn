@@ -16,9 +16,9 @@
  * ~licensed under the MIT license included in this repositiory
 */
 
-#include "../motor/SetMotor.fn"
+#include "../motors/SetMotor.fn"
 
-void setCapture(float mag)
+bool setCapture(float mag)
 {
 	return setMotor(captureRight, mag) && setMotor(captureLeft, mag);
 }

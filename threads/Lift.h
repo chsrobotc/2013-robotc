@@ -16,7 +16,7 @@
  * ~licensed under the MIT license included in this repositiory
 */
 
-#include "../motor/SetMotor.fn"
+#include "../motors/SetMotor.fn"
 #include "../controller/All.h"
 
 task lift()
@@ -25,19 +25,24 @@ task lift()
 	{
 		initController();
 		// for the grabber to the pole in endgame
-		if(checkButton(R_BUMPER, 2))
+		if(joy2Btn(01))
 		{
-			modGrabber(3);
+			servo[grabber] = 255;
 		}
-		else if(checkButton(L_BUMPER, 2))
+
+		/*if(checkButton(3, 2))
 		{
-			modGrabber(-3);
+			servo[grabber] = 255;
+		}
+		if(checkButton(2, 2))
+		{
+			servo[grabber] = 255;
 		}
 		else
 		{
 			//setGrabber(0); its a servo, so don't do this
-		}
-		
+		}*/
+
 		// to pull ourselves up from the ground
 		if(checkButton(R_TRIGGER, 2))
 		{
@@ -47,17 +52,17 @@ task lift()
 		{
 			setRise(-100);
 		}
-		else 
+		else
 		{
 			setRise(0);
 		}
-		
+
 		// to activate the flag lift
-		if(checkButton(A_BUTTON))
+		if(checkButton(A_BUTTON, 2))
 		{
 			setFlag(100);
 		}
-		else if(checkButton(B_BUTTON))
+		else if(checkButton(B_BUTTON, 2))
 		{
 			setFlag(-100);
 		}
@@ -65,15 +70,15 @@ task lift()
 		{
 			setFlag(0);
 		}
-		
+
 		// to control the main lift up and down
 		setLiftVector(scaleJoystick(getJoystick(2, 1, 'y'), LINNEAR));
-		
-		
+
+
 		// to control the open and close of the capture mecanism
 		setCapture(scaleJoystick(getJoystick(2, 2, 'y'), LINNEAR));
 	}
-	
-	
-	
+
+
+
 }

@@ -16,9 +16,9 @@
  * ~licensed under the MIT license included in this repositiory
 */
 
-#include "../motor/SetMotor.fn"
+#include "../motors/SetMotor.fn"
 
-void setRise(float mag)
+bool setRise(float mag)
 {
-	return setMotor(riseLift, mag);
+	 return setMotor(riseLift, mag);
 }

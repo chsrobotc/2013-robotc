@@ -17,7 +17,7 @@
  * ~licensed under the MIT license included in this repositiory
 */
 
-bool setServo(tServo name, float value)
+/*bool setServo(tServo name, float value)
 {
 	if(value <= 128 && value >= -128)
 	{
@@ -35,4 +35,4 @@ bool setServo(tServo name, float value)
 		return true;
 	}
 	return false;
-}
+}*/

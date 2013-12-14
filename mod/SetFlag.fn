@@ -16,10 +16,9 @@
  * ~licensed under the MIT license included in this repositiory
 */
 
-#include "../motor/SetMotor.fn"
+#include "../motors/SetMotor.fn"
 
-void setFlag(float mag)
+bool setFlag(float mag)
 {
 	return setMotor(flagLift, mag);
 }
-

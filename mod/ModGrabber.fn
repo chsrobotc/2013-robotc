@@ -1,0 +1,26 @@
+#pragma once
+ /*
+ * ModGrabber.fn ~ void modGrabber(float pos)
+ * Alex Jones for team 5105 Buffalo Wings
+ * 
+ * Description: 	modifies the posisiton of the grabber for the endgame
+ * 
+ * Takes:			- float pos ~ the position the grabber should be set to
+ *					* it is modified because this is a 180 deg servo
+ * 
+ * Returns:			- (bool) if all values are legit
+ * 
+ * Uses: 			To modify the position of the grabber for use in the endgame
+ * 
+ * Dependancies:	servo/SetServo.fn
+ * 
+ * ~licensed under the MIT license included in this repositiory
+*/
+
+#include "../servo/SetServo.fn"
+
+void modGrabber(float pos)
+{
+	if(servo[grabber] + pos < 256 || servo[grabber] + pos > -256)
+		servo[grabber] += pos;
+}

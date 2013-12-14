@@ -1,11 +1,12 @@
 #pragma once
  /*
- * SetGrabber.fn ~ bool setGrabber(float pos)
+ * ModGrabber.fn ~ bool modGrabber(float pos)
  * Alex Jones for team 5105 Buffalo Wings
  * 
- * Description: 	sets the posisiton of the grabber for the endgame
+ * Description: 	modifies the posisiton of the grabber for the endgame
  * 
  * Takes:			- float pos ~ the position the grabber should be set to
+ *					* it is modified because this is a 180 deg servo
  * 
  * Returns:			- (bool) if all values are legit
  * 
@@ -18,7 +19,7 @@
 
 #include "../servo/SetServo.fn"
 
-bool setGrabber(float pos)
+bool modGrabber(float pos)
 {
-	return setServo(grabber, pos);
+	servo[grabber] += pos;
 }

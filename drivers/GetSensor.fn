@@ -1,0 +1,28 @@
+#pragma once
+/*
+ * GetSensor.fn ~ float getSensor(tSensors name) / float getSensor(tMUXSensor name)
+ * Alex Jones for team 5105 Buffalo Wings
+ *
+ * Description: 	gets a sensor value
+ *
+ * Takes:			- * name ~ the name of the sensor to be read
+ *
+ * Returns:			- (float) the value outputted by the sensor
+ *
+ * Uses: 			to work with all sensors with and without multiplexing
+ *
+ * Dependancies:	NONE
+ *
+ * ~licensed under the MIT license included in this repositiory
+*/
+
+float getSensor(tSensors name)
+{
+	return sensorValue(name);
+}
+
+float getSensor(tMUXSensor name)
+{
+	if(name == ir) return HTIRSreadDir(name);
+	return 0;
+}

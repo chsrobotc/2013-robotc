@@ -31,3 +31,4 @@ TFileHandle   hFileHandle;              // will keep track of our file
   char          incommingChar;                          // this will store each char as we read back in from the file
   string        incommingString[5];                     // this will store the final, fully-read strings (with new strings getting put into new indexes
   int           nLineCounter = 0;  
+//later

@@ -27,15 +27,15 @@ task lift()
 		// for the grabber to the pole in endgame
 		if(checkButton(R_BUMPER, 2))
 		{
-			setGrabber(100);
+			modGrabber(3);
 		}
 		else if(checkButton(L_BUMPER, 2))
 		{
-			setGrabber(-100);
+			modGrabber(-3);
 		}
 		else
 		{
-			setGrabber(0);
+			//setGrabber(0); its a servo, so don't do this
 		}
 		
 		// to pull ourselves up from the ground
@@ -71,7 +71,7 @@ task lift()
 		
 		
 		// to control the open and close of the capture mecanism
-		
+		setCapture(scaleJoystick(getJoystick(2, 2, 'y'), LINNEAR));
 	}
 	
 	

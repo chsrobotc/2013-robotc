@@ -18,10 +18,12 @@
 #include "../controller/InitController.fn"
 #include "../teleop/JoystickMove.fn"
 #include "../threads/Drive.h"
+#include "../threads/Lift.h"
 #include "../mecanum/MoveDeg.fn"
 
 task main()
 {
 
 	StartTask(drive);
+	StartTask(lift);
 }

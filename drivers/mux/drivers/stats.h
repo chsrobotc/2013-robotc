@@ -6,7 +6,7 @@
  */
 
 /*
- * $Id: stats.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: stats.h 123 2012-11-02 16:35:15Z xander $
  */
 
 #ifndef __STATS_H__
@@ -20,8 +20,7 @@
  * and modified to compile under ROBOTC.
  *
  * License: You may use this code as you wish, provided you give credite where its due.
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  *
  * Changelog:
  * - 0.1: Initial release
@@ -97,7 +96,7 @@ float gaussian(float mu, float sigma) {
 #endif // __STATS_H__
 
 /*
- * $Id: stats.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: stats.h 123 2012-11-02 16:35:15Z xander $
  */
 /* @} */
 /* @} */

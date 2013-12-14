@@ -6,7 +6,7 @@
  */
 
 /*
- * $Id: mindsensors-touchpanel.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: mindsensors-touchpanel.h 123 2012-11-02 16:35:15Z xander $
  */
 
 #ifndef __MSTP_H__
@@ -25,8 +25,7 @@
  *
  * License: You may use this code as you wish, provided you give credit where it's due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  * \author Xander Soldaat
  * \date 30 November 2011
  * \version 0.1
@@ -167,7 +166,7 @@ int MSTPgetGesture(tSensors link)
 #endif // __MSTP_H__
 
 /*
- * $Id: mindsensors-touchpanel.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: mindsensors-touchpanel.h 123 2012-11-02 16:35:15Z xander $
  */
 /* @} */
 /* @} */

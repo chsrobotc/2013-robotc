@@ -6,7 +6,7 @@
  */
 
 /*
- * $Id: common-rs485.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: common-rs485.h 123 2012-11-02 16:35:15Z xander $
  */
 
 /** \file common-rs485.h
@@ -16,8 +16,7 @@
  * useful for writing drivers.
  * License: You may use this code as you wish, provided you give credit where its due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  *
  * Changelog:
  * - 0.1: Initial release
@@ -65,7 +64,7 @@ bool RS485write(tMassiveArray &buf, ubyte len)
 
 #ifdef __RS485_DEBUG__
 	writeDebugStream("RS485write: ");
-	for (ubyte datacounter = 0; datacounter < len; datacounter++)
+	for (int datacounter = 0; datacounter < len; datacounter++)
 	{
 	  writeDebugStream("%c", buf[datacounter]);
 	  EndTimeSlice();
@@ -88,10 +87,10 @@ bool RS485write(tMassiveArray &buf, ubyte len)
  * @param timeout optional parameter to specify the timeout, defaults to 100ms
  * @return true if no error occured, false if it did
  */
-bool RS485read(tMassiveArray &buf, int &len, int timeout = 100) {
+bool RS485read(tMassiveArray &buf, ubyte &len, int timeout = 100) {
 	int bytesAvailable = 0;
 
-	memset(buf, 0, sizeof(buf));
+	memset(RS485rxbuffer, 0, sizeof(RS485rxbuffer));
 
 	TMRreset(rxTimer);
   TMRsetup(rxTimer, timeout);
@@ -102,16 +101,14 @@ bool RS485read(tMassiveArray &buf, int &len, int timeout = 100) {
 	}
 
 	nxtReadRawHS(&buf[0], bytesAvailable);
-	len = bytesAvailable;
 
 #ifdef __RS485_DEBUG__
-	writeDebugStream("RS485read (%d): ", bytesAvailable);
-	for (int datacounter = 0; datacounter < bytesAvailable; datacounter++)
+	writeDebugStream("RS485read: ");
+	for (int datacounter = 0; datacounter < len; datacounter++)
 	{
 	  writeDebugStream("%c", buf[datacounter]);
 	  EndTimeSlice();
 	}
-	writeDebugStream("\n");
 #endif // __RS485_DEBUG__
 
   return true;
@@ -245,37 +242,21 @@ void RS485initLib(long baudrate=230400) {
 
 
 
-void RS485clearRead(bool sendnewline = false)
+void RS485clearRead()
 {
   ubyte nDymmyData[] = {13};
-  if(sendnewline)
-  {
-	  nxtWriteRawHS(&nDymmyData[0], 1);   // Send the carriage return
-	  wait1Msec(10);
-	}
+  nxtWriteRawHS(&nDymmyData[0], 1);   // Send the carriage return
+  wait1Msec(100);
   while(nxtGetAvailHSBytes()> 0){
     nxtReadRawHS(&nDymmyData[0], 1);    // Read the response.  Probably an error.
-    EndTimeSlice();
   }
-}
-
-
-bool RS485sendString(string &data)
-{
-  memcpy(RS485txbuffer, data, strlen(data));
-  return RS485write(RS485txbuffer, strlen(data));
-}
-
-bool RS485sendString(char *data)
-{
-  memcpy(RS485txbuffer, data, strlen(data));
-  return RS485write(RS485txbuffer, strlen(data));
+  wait1Msec(100);
 }
 
 #endif // __RS485_H__
 
 /*
- * $Id: common-rs485.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: common-rs485.h 123 2012-11-02 16:35:15Z xander $
  */
 /* @} */
 /* @} */

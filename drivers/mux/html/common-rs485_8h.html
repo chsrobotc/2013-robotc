@@ -37,14 +37,12 @@
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common-rs485.html#ga7c456c09f2a2dd29ff53d20c8a77f42b">RS485write</a> (<a class="el" href="group__common.html#gaf1da7edf6615d1b2376642de9bbfe449">tMassiveArray</a> &amp;buf, ubyte len)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common-rs485.html#gaaf7c3831c4bf35f0a581890749bd8b0e">RS485read</a> (<a class="el" href="group__common.html#gaf1da7edf6615d1b2376642de9bbfe449">tMassiveArray</a> &amp;buf, int &amp;len, int timeout=100)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common-rs485.html#gafb61bcb086da154a0332cc703c340998">RS485read</a> (<a class="el" href="group__common.html#gaf1da7edf6615d1b2376642de9bbfe449">tMassiveArray</a> &amp;buf, ubyte &amp;len, int timeout=100)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common-rs485.html#gaa4304b64044355323adc1c6c7356ee44">RS485readLargeResponse</a> (<a class="el" href="group__common.html#gaf1da7edf6615d1b2376642de9bbfe449">tMassiveArray</a> &amp;buf, int &amp;len, int timeout=100)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common-rs485.html#ga8cc30dfc87646c9abff0265a7c254261">RS485appendToBuff</a> (<a class="el" href="group__common.html#gaf1da7edf6615d1b2376642de9bbfe449">tMassiveArray</a> &amp;buf, const short index, const ubyte *pData, const short nLength)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common-rs485.html#ga67eeb276d156f9bf930ac0e1d957f864">RS485appendToBuff</a> (<a class="el" href="group__common.html#gaf1da7edf6615d1b2376642de9bbfe449">tMassiveArray</a> &amp;buf, const short index, string pData)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common-rs485.html#ga681eadb60516210bbd261bc50d80dab7">RS485initLib</a> (long baudrate=230400)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common-rs485.html#ga4446a74148d4d8d4f387a3bb08080f85">RS485clearRead</a> (bool sendnewline=false)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common-rs485.html#gadb0d2f59860d233f035b318570e80f06">RS485sendString</a> (string &amp;data)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common-rs485.html#gafd61d7ec179089ebc16ba481e8f732f1">RS485sendString</a> (char *data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common-rs485.html#ga0706f33ba2fb81f55a480e45f454995c">RS485clearRead</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common-rs485.html#ga988a2a4cff477b9320e5953ef00bd5e5">rxTimer</a></td></tr>
@@ -55,7 +53,7 @@ Variables</h2></td></tr>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>Commonly used RS485-related functions used by drivers. </p>
 <p><a class="el" href="common-rs485_8h.html" title="Commonly used RS485-related functions used by drivers.">common-rs485.h</a> provides a number of frequently used RS485-related functions that are useful for writing drivers. License: You may use this code as you wish, provided you give credit where its due.</p>
-<p>THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER.</p>
+<p>THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.</p>
 <p>Changelog:</p>
 <ul>
 <li>0.1: Initial release</li>
@@ -66,7 +64,7 @@ Variables</h2></td></tr>
 
 <p>Definition in file <a class="el" href="common-rs485_8h_source.html">common-rs485.h</a>.</p>
 </div>
-<hr class="footer"/><address class="footer"><small>Generated on Wed Mar 13 2013 19:56:43 for ROBOTC Drivers by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Nov 2 2012 17:45:52 for ROBOTC Drivers by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

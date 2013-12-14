@@ -6,7 +6,7 @@
  */
 
 /*
- * $Id: common.h 134 2013-03-12 18:15:17Z xander $
+ * $Id: common.h 123 2012-11-02 16:35:15Z xander $
  */
 
 /** \file common.h
@@ -16,8 +16,7 @@
  * drivers.
  * License: You may use this code as you wish, provided you give credit where its due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER.
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  *
  * Changelog:
  * - 0.1: Initial release
@@ -73,8 +72,8 @@
 #endif
 
 #include "firmwareVersion.h"
-#if (kRobotCVersionNumeric < 359)
-#error "These drivers are only supported on RobotC version 3.59 or higher"
+#if (kRobotCVersionNumeric < 354)
+#error "These drivers are only supported on RobotC version 3.54 or higher"
 #endif
 
 #ifndef MAX_ARR_SIZE
@@ -136,7 +135,6 @@ typedef ubyte tIPaddr[4];                     /*!< Struct for holding an IP addr
 typedef int tIntArray[MAX_ARR_SIZE];
 
 void clearI2CError(tSensors link, ubyte address);
-void clearI2Cbus(tSensors link);
 bool waitForI2CBus(tSensors link);
 bool writeI2C(tSensors link, tByteArray &request, tByteArray &reply, int replylen);
 bool writeI2C(tSensors link, tByteArray &request);
@@ -403,59 +401,10 @@ long getUID() {
 }
 
 
-#define STRTOK_MAX_TOKEN_SIZE 20
-#define STRTOK_MAX_BUFFER_SIZE 50
-
-/**
- * Tokenise an array of chars, using a seperator
- * @param buffer pointer to buffer we're parsing
- * @param token pointer to buffer to hold the tokens as we find them
- * @param seperator the seperator used between tokens
- * @return true if there are still tokens left, false if we're done
- */
-bool strtok(char *buffer, char *token, char *seperator)
-{
-  int pos = StringFind(buffer, seperator);
-  char t_buff[STRTOK_MAX_BUFFER_SIZE];
-
-  // Make sure we zero out the buffer and token
-  memset(token, 0, STRTOK_MAX_TOKEN_SIZE);
-  memset(&t_buff[0], 0, STRTOK_MAX_BUFFER_SIZE);
-
-  // Looks like we found a seperator
-  if (pos >= 0)
-  {
-    // Copy the first token into the token buffer, only if the token is
-    // not an empty one
-    if (pos > 0)
-      memcpy(token, buffer, pos);
-    // Now copy characters -after- the seperator into the temp buffer
-    memcpy(&t_buff[0], buffer + (pos + 1), strlen(buffer) - pos);
-    // Zero out the real buffer
-    memset(buffer, 0, strlen(buffer) + 1);
-    // Copy the temp buffer, which now only contains everything after the previous
-    // token into the buffer for the next round.
-    memcpy(buffer, &t_buff[0], strlen(&t_buff[0]));
-    return true;
-  }
-  // We found no seperator but the buffer still contains a string
-  // This can happen when there is no trailing seperator
-  else if(strlen(buffer) > 0)
-  {
-    // Copy the token into the token buffer
-    memcpy(token, buffer, strlen(buffer));
-    // Zero out the remainder of the buffer
-    memset(buffer, 0, strlen(buffer) + 1);
-    return true;
-  }
-  return false;
-}
-
-
 #endif // __COMMON_H__
 
 /*
- * $Id: common.h 134 2013-03-12 18:15:17Z xander $
+ * $Id: common.h 123 2012-11-02 16:35:15Z xander $
  */
 /* @} */
 /* @} */

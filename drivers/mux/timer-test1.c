@@ -1,5 +1,5 @@
 /*
- * $Id: timer-test1.c 133 2013-03-10 15:15:38Z xander $
+ * $Id: timer-test1.c 123 2012-11-02 16:35:15Z xander $
  */
 
 /** \file timer.h
@@ -13,8 +13,7 @@
  * before this driver is included.
  *
  * License: You may use this code as you wish, provided you give credit where its due.
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  *
  * Changelog:
  * - 0.1: Initial release
@@ -62,5 +61,5 @@ task main () {
 }
 
 /*
- * $Id: timer-test1.c 133 2013-03-10 15:15:38Z xander $
+ * $Id: timer-test1.c 123 2012-11-02 16:35:15Z xander $
  */

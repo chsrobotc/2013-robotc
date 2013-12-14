@@ -1,25 +1,18 @@
 /*
- * $Id: README.txt 133 2013-03-10 15:15:38Z xander $
+ * $Id: README.txt 123 2012-11-02 16:35:15Z xander $
  */
 
 -= Note =-
-These drivers are for RobotC 3.59 beta and higher and are part of the
-version 3.3 of the 3rd Party RobotC Drivers suite.
+These drivers are for RobotC 3.54 and higher and are part of the
+version 3.1 of the 3rd Party RobotC Drivers suite.
 
-What's new in 3.3?
-* New driver + example for the Dexter Industries dLight
-* New driver + examples for the Mindsensors Sensor MUX (includes a disco party)
-* New matrix math functions, based on the Arduino Matrix library, worth for both floats and longs
-* Fixed silly bug in NXTCam driver. Thanks fxlj007 for reading through the code!
-* Complete rewrite of the dWIFI config program and driver, I hope it still works! :)
-* Fixed axes in the dIMU driver, I had flipped x and y
-* Added a simple strtok() function to common.h
-* Minor costmetic tweaks to test programs
-* Minor documentation tweaks here and there
-* For those who like to peruse code, check out dexterind-imu.h for a glimpse of what's to come
-* Fixed naming conflict between Hitechnic EOPD and Mindsensors SumoEyes driver (thanks Bill Fortney)
-* Fixed LEGO Light Sensor calibration data saving (thanks Jamie Diamond)
-* Minimum version of ROBOTC is now 3.59
+What's new in 3.1?
+* New driver: Dexter Industries NXTChuck
+* New driver: Mindsensors Angle Sensor
+* Started splitting RS485 functions from higher level sensor drivers for re-use
+* TODO: 
+- Fix dexterind-wifi.h
+- Fix mindsensors-imu.hemonstrate how to use it.
 
 -= API Documentation =-
 The complete API documentation can be found in the html folder.
@@ -39,5 +32,5 @@ Thanks,
 Xander Soldaat (xander@botbench.com)
 
 /*
- * $Id: README.txt 133 2013-03-10 15:15:38Z xander $
+ * $Id: README.txt 123 2012-11-02 16:35:15Z xander $
  */

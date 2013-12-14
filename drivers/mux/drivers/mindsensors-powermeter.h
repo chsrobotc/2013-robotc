@@ -6,7 +6,7 @@
  */
 
 /*
- * $Id: mindsensors-powermeter.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: mindsensors-powermeter.h 123 2012-11-02 16:35:15Z xander $
  */
 
 #ifndef __MSPM_H__
@@ -25,8 +25,7 @@
  *
  * License: You may use this code as you wish, provided you give credit where it's due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  * \author Xander Soldaat
  * \date 16 December 2009
  * \version 0.1
@@ -187,7 +186,7 @@ bool MSPMresetCounters(tSensors link, ubyte address) {
 #endif // __MSLL_H__
 
 /*
- * $Id: mindsensors-powermeter.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: mindsensors-powermeter.h 123 2012-11-02 16:35:15Z xander $
  */
 /* @} */
 /* @} */

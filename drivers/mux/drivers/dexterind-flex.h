@@ -6,7 +6,7 @@
  */
 
 /*
- * $Id: dexterind-flex.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: dexterind-flex.h 123 2012-11-02 16:35:15Z xander $
  */
 
 #ifndef __DFLEX_H__
@@ -24,8 +24,7 @@
  *
  * License: You may use this code as you wish, provided you give credit where its due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  * \author Xander Soldaat (xander_at_botbench.com)
  * \date 23 June 2010
  * \version 0.1
@@ -264,7 +263,7 @@ void _DFLEXreadCalVals(int &lowval, int &highval) {
 #endif // __DFLEX_H__
 
 /*
- * $Id: dexterind-flex.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: dexterind-flex.h 123 2012-11-02 16:35:15Z xander $
  */
 /* @} */
 /* @} */

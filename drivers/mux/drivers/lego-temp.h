@@ -6,7 +6,7 @@
  */
 
 /*
- * $Id: lego-temp.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: lego-temp.h 123 2012-11-02 16:35:15Z xander $
  */
 
 #ifndef __LEGOTMP_DRIVER_H__
@@ -27,8 +27,7 @@
  *
  * License: You may use this code as you wish, provided you give credit where its due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  * \author Sylvain CACHEUX (sylcalego@cacheux.info)
  * \author Xander Soldaat (mightor@gmail.com), version 0.2
  * \date 15 february 2010
@@ -376,7 +375,7 @@ bool LEGOTMPsetContinuous(tSensors link) {
 #endif // __LEGOTMP_DRIVER_H__
 
 /*
- * $Id: lego-temp.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: lego-temp.h 123 2012-11-02 16:35:15Z xander $
  */
 /* @} */
 /* @} */

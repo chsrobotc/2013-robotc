@@ -6,7 +6,7 @@
  */
 
 /*
- * $Id: hitechnic-irlink-rcx.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: hitechnic-irlink-rcx.h 123 2012-11-02 16:35:15Z xander $
  */
 
 #ifndef _HTRCX_H_
@@ -26,8 +26,7 @@
  *
  * License: You may use this code as you wish, provided you give credit where its due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  * \author Xander Soldaat (xander_at_botbench.com)
  * \date 31 October 2010
  * \version 1.1
@@ -367,7 +366,7 @@ bool HTRCXmotorPwr(tSensors link, unsigned byte _motor, unsigned byte power) {
 #endif // _HTRCX_H_
 
 /*
- * $Id: hitechnic-irlink-rcx.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: hitechnic-irlink-rcx.h 123 2012-11-02 16:35:15Z xander $
  */
 /* @} */
 /* @} */

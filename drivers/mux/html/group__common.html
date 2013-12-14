@@ -49,8 +49,6 @@ Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common.html#ga59934691af1d56f6e8f6d46c781bbcb5">max2</a>(a, b)&#160;&#160;&#160;(a &gt; b ? a : b)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common.html#gaa0d45e1e67c5cacf5c9251fcd90a971b">max3</a>(a, b, c)&#160;&#160;&#160;(a &gt; b) ? ((a &gt; c) ? a : c) : ((b &gt; c) ? b : c)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common.html#ga4090c86dbda268a45068c4413fba327d">clip</a>(a, b, c)&#160;&#160;&#160;min2(c, max2(b, a))</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common.html#gab9598be7202472dcf4870641fb2cff17">STRTOK_MAX_TOKEN_SIZE</a>&#160;&#160;&#160;20</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common.html#ga88adde798b06bf51b3ce9c7ac49188b1">STRTOK_MAX_BUFFER_SIZE</a>&#160;&#160;&#160;50</td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef ubyte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common.html#gaa172ef131853460e5b9f5c6db81d30f4">tByteArray</a> [MAX_ARR_SIZE]</td></tr>
@@ -63,12 +61,10 @@ Typedefs</h2></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common.html#gae58f52c19f82a79aedfdf5b9b3594abd">clearI2CError</a> (tSensors link, ubyte address)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common.html#ga1079ea93c9d0a5b793ea18ea2144ae7b">clearI2Cbus</a> (tSensors link)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common.html#ga4fa55ac307e9bb34f74514371f527119">waitForI2CBus</a> (tSensors link)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common.html#gad02e06f83b264ee6fc7df41eb4712080">writeI2C</a> (tSensors link, <a class="el" href="group__common.html#gaa172ef131853460e5b9f5c6db81d30f4">tByteArray</a> &amp;request, <a class="el" href="group__common.html#gaa172ef131853460e5b9f5c6db81d30f4">tByteArray</a> &amp;reply, int replylen)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common.html#ga98b9f725d95cc626af27f4660a8cddbe">writeI2C</a> (tSensors link, <a class="el" href="group__common.html#gaa172ef131853460e5b9f5c6db81d30f4">tByteArray</a> &amp;request)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common.html#gaa2aa3061fe3c887f10977ce6feed3031">getUID</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common.html#ga978c9ed56c6fce3d8d46f2cdca59b07e">strtok</a> (char *buffer, char *token, char *seperator)</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>Commonly used functions used by drivers </p>
@@ -85,7 +81,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 <p>&lt; define this as 0 to remove the check </p>
 
-<p>Definition at line <a class="el" href="common_8h_source.html#l00070">70</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00069">69</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
@@ -122,7 +118,7 @@ Functions</h2></td></tr>
 <p>Returns x if it is between min and max. If outside the range, it returns min or max. </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="hitechnic-pir-test1_8c-example.html#a1">hitechnic-pir-test1.c</a>, and <a class="el" href="mindsensors-lineleader-test3_8c-example.html#a4">mindsensors-lineleader-test3.c</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="common_8h_source.html#l00118">118</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00117">117</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
@@ -153,7 +149,7 @@ Functions</h2></td></tr>
 <p>This function returns the bigger of the two numbers </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="mindsensors-accelerometer-test2_8c-example.html#a3">mindsensors-accelerometer-test2.c</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="common_8h_source.html#l00105">105</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00104">104</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
@@ -190,7 +186,7 @@ Functions</h2></td></tr>
 <p>This function returns the biggest of the three numbers </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="mindsensors-ps2ctrl-v4-test1_8c-example.html#a0">mindsensors-ps2ctrl-v4-test1.c</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="common_8h_source.html#l00111">111</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00110">110</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
@@ -206,7 +202,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 <p>Maximum buffer size for byte_array, can be overridden in your own program. It's 17 bytes big because the max I2C buffer size is 16, plus 1 byte to denote packet length. </p>
 
-<p>Definition at line <a class="el" href="common_8h_source.html#l00086">86</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00085">85</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
@@ -236,7 +232,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 <p>This define returns the smaller of the two numbers </p>
 
-<p>Definition at line <a class="el" href="common_8h_source.html#l00093">93</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00092">92</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
@@ -272,37 +268,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 <p>This define returns the smallest of the three numbers </p>
 
-<p>Definition at line <a class="el" href="common_8h_source.html#l00099">99</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ga88adde798b06bf51b3ce9c7ac49188b1"></a><!-- doxytag: member="common.h::STRTOK_MAX_BUFFER_SIZE" ref="ga88adde798b06bf51b3ce9c7ac49188b1" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define STRTOK_MAX_BUFFER_SIZE&#160;&#160;&#160;50</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="common_8h_source.html#l00407">407</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="gab9598be7202472dcf4870641fb2cff17"></a><!-- doxytag: member="common.h::STRTOK_MAX_TOKEN_SIZE" ref="gab9598be7202472dcf4870641fb2cff17" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define STRTOK_MAX_TOKEN_SIZE&#160;&#160;&#160;20</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="common_8h_source.html#l00406">406</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00098">98</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
@@ -320,7 +286,7 @@ Functions</h2></td></tr>
 <p>32 byte array for large blobs of data </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="benedettelli-nxt2wifi-test3_8c-example.html#a0">benedettelli-nxt2wifi-test3.c</a>, and <a class="el" href="humarobotics-wifiblock-test1_8c-example.html#a0">humarobotics-wifiblock-test1.c</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="common_8h_source.html#l00129">129</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00128">128</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
@@ -337,7 +303,7 @@ Functions</h2></td></tr>
 <p>Array of bytes as a struct, this is a work around for RobotC's inability to pass an array to a function. </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="benedettelli-nxt2wifi-test1_8c-example.html#a3">benedettelli-nxt2wifi-test1.c</a>, <a class="el" href="eeprom-test1_8c-example.html#a0">eeprom-test1.c</a>, <a class="el" href="eeprom-test2_8c-example.html#a0">eeprom-test2.c</a>, <a class="el" href="mindsensors-ligthsensorarray-test1_8c-example.html#a0">mindsensors-ligthsensorarray-test1.c</a>, <a class="el" href="mindsensors-lineleader-test2_8c-example.html#a0">mindsensors-lineleader-test2.c</a>, and <a class="el" href="mindsensors-lineleader-test3_8c-example.html#a0">mindsensors-lineleader-test3.c</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="common_8h_source.html#l00125">125</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00124">124</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
@@ -352,9 +318,9 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>64 byte array for very large blobs of data </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="benedettelli-nxt2wifi-test1_8c-example.html#a0">benedettelli-nxt2wifi-test1.c</a>, <a class="el" href="benedettelli-nxt2wifi-test2_8c-example.html#a0">benedettelli-nxt2wifi-test2.c</a>, <a class="el" href="benedettelli-nxt2wifi-test3_8c-example.html#a19">benedettelli-nxt2wifi-test3.c</a>, and <a class="el" href="benedettelli-nxt2wifi-test4_8c-example.html#a0">benedettelli-nxt2wifi-test4.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="benedettelli-nxt2wifi-test1_8c-example.html#a0">benedettelli-nxt2wifi-test1.c</a>, <a class="el" href="benedettelli-nxt2wifi-test2_8c-example.html#a0">benedettelli-nxt2wifi-test2.c</a>, <a class="el" href="benedettelli-nxt2wifi-test3_8c-example.html#a23">benedettelli-nxt2wifi-test3.c</a>, and <a class="el" href="benedettelli-nxt2wifi-test4_8c-example.html#a0">benedettelli-nxt2wifi-test4.c</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="common_8h_source.html#l00128">128</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00127">127</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
@@ -369,9 +335,9 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Array of ints as a struct, this is a work around for RobotC's inability to pass an array to a function. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="mindsensors-lineleader-test4_8c-example.html#a0">mindsensors-lineleader-test4.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="mindsensors-ligthsensorarray-test2_8c-example.html#a0">mindsensors-ligthsensorarray-test2.c</a>, and <a class="el" href="mindsensors-lineleader-test4_8c-example.html#a0">mindsensors-lineleader-test4.c</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="common_8h_source.html#l00136">136</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00135">135</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
@@ -388,7 +354,7 @@ Functions</h2></td></tr>
 <p>Struct for holding an IP address </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="humarobotics-wifiblock-test1_8c-example.html#a3">humarobotics-wifiblock-test1.c</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="common_8h_source.html#l00130">130</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00129">129</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
@@ -404,7 +370,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 <p>128 byte array for very large blobs of data </p>
 
-<p>Definition at line <a class="el" href="common_8h_source.html#l00127">127</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00126">126</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
@@ -419,28 +385,11 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="common_8h_source.html#l00126">126</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00125">125</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
 <hr/><h2>Function Documentation</h2>
-<a class="anchor" id="ga1079ea93c9d0a5b793ea18ea2144ae7b"></a><!-- doxytag: member="common.h::clearI2Cbus" ref="ga1079ea93c9d0a5b793ea18ea2144ae7b" args="(tSensors link)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void clearI2Cbus </td>
-          <td>(</td>
-          <td class="paramtype">tSensors&#160;</td>
-          <td class="paramname"> <em>link</em>&#160;)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="gae58f52c19f82a79aedfdf5b9b3594abd"></a><!-- doxytag: member="common.h::clearI2CError" ref="gae58f52c19f82a79aedfdf5b9b3594abd" args="(tSensors link, ubyte address)" -->
 <div class="memitem">
 <div class="memproto">
@@ -474,7 +423,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="common_8h_source.html#l00151">151</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00149">149</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
@@ -494,52 +443,7 @@ Functions</h2></td></tr>
 <p>Create a unique ID (UID) for an NXT. This based on the last 3 bytes of the Bluetooth address. The first 3 bytes are manufacturer specific and identical for all NXTs and are therefore not used. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>a unique ID for the NXT. </dd></dl>
 
-<p>Definition at line <a class="el" href="common_8h_source.html#l00396">396</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ga978c9ed56c6fce3d8d46f2cdca59b07e"></a><!-- doxytag: member="common.h::strtok" ref="ga978c9ed56c6fce3d8d46f2cdca59b07e" args="(char *buffer, char *token, char *seperator)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool strtok </td>
-          <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"> <em>buffer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"> <em>token</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"> <em>seperator</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Tokenise an array of chars, using a seperator </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">buffer</td><td>pointer to buffer we're parsing </td></tr>
-    <tr><td class="paramname">token</td><td>pointer to buffer to hold the tokens as we find them </td></tr>
-    <tr><td class="paramname">seperator</td><td>the seperator used between tokens </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>true if there are still tokens left, false if we're done </dd></dl>
-
-<p>Definition at line <a class="el" href="common_8h_source.html#l00416">416</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00394">394</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
@@ -566,7 +470,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>true if no error occured, false if it did </dd></dl>
 
-<p>Definition at line <a class="el" href="common_8h_source.html#l00174">174</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00172">172</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
@@ -618,7 +522,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>true if no error occured, false if it did </dd></dl>
 
-<p>Definition at line <a class="el" href="common_8h_source.html#l00271">271</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00269">269</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
@@ -656,12 +560,12 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>true if no error occured, false if it did </dd></dl>
 
-<p>Definition at line <a class="el" href="common_8h_source.html#l00211">211</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00209">209</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
 </div>
-<hr class="footer"/><address class="footer"><small>Generated on Wed Mar 13 2013 19:56:44 for ROBOTC Drivers by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Nov 2 2012 17:45:52 for ROBOTC Drivers by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

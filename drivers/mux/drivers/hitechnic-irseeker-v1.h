@@ -6,7 +6,7 @@
  */
 
 /*
- * $Id: hitechnic-irseeker-v1.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: hitechnic-irseeker-v1.h 123 2012-11-02 16:35:15Z xander $
  */
 
 #ifndef __HTIRS_H__
@@ -37,8 +37,7 @@
  *
  * License: You may use this code as you wish, provided you give credit where its due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  * \author Xander Soldaat (xander_at_botbench.com)
  * \date 25 November 2009
  * \version 0.9
@@ -175,7 +174,7 @@ bool HTIRSreadAllStrength(tMUXSensor muxsensor, int &dcS1, int &dcS2, int &dcS3,
 #endif // __HTIRS_H__
 
 /*
- * $Id: hitechnic-irseeker-v1.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: hitechnic-irseeker-v1.h 123 2012-11-02 16:35:15Z xander $
  */
 /* @} */
 /* @} */

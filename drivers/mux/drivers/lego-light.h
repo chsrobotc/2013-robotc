@@ -6,7 +6,7 @@
  */
 
 /*
- * $Id: lego-light.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: lego-light.h 123 2012-11-02 16:35:15Z xander $
  */
 
 #ifndef __LEGOLS_H__
@@ -22,8 +22,7 @@
  *
  * License: You may use this code as you wish, provided you give credit where its due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  * \author Xander Soldaat (xander_at_botbench.com)
  * \date 25 November 2009
  * \version 0.2
@@ -134,12 +133,12 @@ int LSvalNorm(tMUXSensor muxsensor) {
 
   currval = LSvalRaw(muxsensor);
 
-  if (currval <= lslow[muxsensor])
+  if (currval <= lslow)
     return 0;
-  else if (currval >= lshigh[muxsensor])
+  else if (currval >= lshigh)
     return 100;
 
-  return ((currval - lslow[muxsensor]) * 100) / (lshigh[muxsensor] - lslow[muxsensor]);
+  return ((currval - lslow) * 100) / (lshigh - lslow);
 }
 #endif // __HTSMUX_SUPPORT__
 
@@ -277,7 +276,7 @@ void _LSwriteCalVals() {
   // Write the low calibration value
   for (int i = 0; i < 16; i++) {
 	  WriteShort(hFileHandle, nIoResult, lslow[i]);
-	  // writeDebugStreamLine("W: lslow[%d]: %d", i, lslow[i]);
+	  writeDebugStreamLine("W: lslow[%d]: %d", i, lslow[i]);
 	  if (nIoResult != ioRsltSuccess) {
 	    eraseDisplay();
 	    nxtDisplayTextLine(3, "can't write lowval");
@@ -291,7 +290,7 @@ void _LSwriteCalVals() {
   // Write the low calibration value
   for (int i = 0; i < 16; i++) {
 	  WriteShort(hFileHandle, nIoResult, lshigh[i]);
-	  // writeDebugStreamLine("W lshigh[%d]: %d", i, lshigh[i]);
+	  writeDebugStreamLine("W lshigh[%d]: %d", i, lshigh[i]);
 	  if (nIoResult != ioRsltSuccess) {
 	    eraseDisplay();
 	    nxtDisplayTextLine(3, "can't write highval");
@@ -341,7 +340,7 @@ void _LSreadCalVals() {
   // Read the low calibration value
   for (int i = 0; i < 16; i++) {
 	  ReadShort(hFileHandle, nIoResult, lslow[i]);
-    // writeDebugStreamLine("R: lslow[%d]: %d", i, lslow[i]);
+    writeDebugStreamLine("R: lslow[%d]: %d", i, lslow[i]);
 	  if (nIoResult != ioRsltSuccess) {
 			memset(&lslow[0], 0, sizeof(lslow));
 			for (int i = 0; i < 16; i++) {
@@ -354,7 +353,7 @@ void _LSreadCalVals() {
 
   for (int i = 0; i < 16; i++) {
 	  ReadShort(hFileHandle, nIoResult, lshigh[i]);
-	  // writeDebugStreamLine("R lshigh[%d]: %d", i, lshigh[i]);
+	  writeDebugStreamLine("R lshigh[%d]: %d", i, lshigh[i]);
 	  if (nIoResult != ioRsltSuccess) {
 			memset(&lslow[0], 0, sizeof(lslow));
 			for (int i = 0; i < 16; i++) {
@@ -371,7 +370,7 @@ void _LSreadCalVals() {
 #endif // __LEGOLS_H__
 
 /*
- * $Id: lego-light.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: lego-light.h 123 2012-11-02 16:35:15Z xander $
  */
 /* @} */
 /* @} */

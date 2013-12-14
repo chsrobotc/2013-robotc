@@ -6,7 +6,7 @@
  */
 
 /*
- * $Id: dexterind-imu.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: dexterind-imu.h 123 2012-11-02 16:35:15Z xander $
  */
 
 #ifndef __DIMU_H__
@@ -24,9 +24,7 @@
  *
  * License: You may use this code as you wish, provided you give credit where its due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
- 
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  * \author Xander Soldaat (xander_at_botbench.com)
  * \date 07 August 2011
  * \version 0.1
@@ -38,12 +36,6 @@
 
 #ifndef __COMMON_H__
 #include "common.h"
-#endif
-
-//#define STRUCT_CODE_ENABLED 1
-
-#ifdef STRUCT_CODE_ENABLED
-#warn "You have enabled experimental code!"
 #endif
 
 #define DIMU_GYRO_I2C_ADDR      0xD2  /*!< Gyro I2C address */
@@ -88,29 +80,11 @@
 #define DIMUreadAccelYAxis8Bit(X) DIMUreadAccelAxis8Bit(X, DIMU_ACC_Y_AXIS)
 #define DIMUreadAccelZAxis8Bit(X) DIMUreadAccelAxis8Bit(X, DIMU_ACC_Z_AXIS)
 
-// for future use
-#ifdef STRUCT_CODE_ENABLED
-typedef struct
-{
-  ubyte I2CAddress;
-  tSensors link;
-  tByteArray I2CRequest;
-  tByteArray I2CReply;
-  float gyroDivisor;
-  float accelDivisor;
-  float axesAccel8Bit[3];
-  float axesAccel10Bit[3];
-  float axesGyro8Bit[3];
-  float axesGyro10Bit[3];
-} tDIMUdata, *tDIMUdataPtr;
-#endif
-
 float DIMU_Gyro_divisor[4] = {0.0, 0.0, 0.0, 0.0}; /*!< Array to hold divisor data for 8 bit measurements */
 float DIMU_Accel_divisor[4] = {0.0, 0.0, 0.0, 0.0}; /*!< Array to hold divisor data for 8 bit measurements */
 
 tByteArray DIMU_I2CRequest;    /*!< Array to hold I2C command data */
 tByteArray DIMU_I2CReply;      /*!< Array to hold I2C reply data */
-
 
 bool DIMUconfigGyro(tSensors link, ubyte range, bool lpfenable=true);
 float DIMUreadGyroAxis(tSensors link, ubyte axis);
@@ -122,17 +96,8 @@ float DIMUreadAccelAxis10Bit(tSensors link, ubyte axis, bool calibrate = false);
 void DIMUreadAccelAxes8Bit(tSensors link, float &_x, float &_y, float &_z);
 void DIMUreadAccelAxes10Bit(tSensors link, float &_x, float &_y, float &_z);
 void DIMUcalAccel(tSensors link);
-bool DIMUconfigIMU(tSensors link, ubyte accelRange=DIMU_ACC_RANGE_8G, ubyte gyroRange=DIMU_GYRO_RANGE_250, bool lpfenable=true);
 
-#ifdef STRUCT_CODE_ENABLED
-bool DIMUconfigGyro(tDIMUdataPtr sensor, ubyte range, bool lpfenable=true);
-void DIMUreadGyroAxes(tDIMUdataPtr sensor);
-bool DIMUconfigAccel(tDIMUdataPtr sensor, ubyte range);
-void DIMUreadAccelAxes8Bit(tDIMUdataPtr sensor);
-void DIMUreadAccelAxes10Bit(tDIMUdataPtr sensor);
-void DIMUcalAccel(tDIMUdataPtr sensor);
-bool DIMUconfigIMU(tDIMUdataPtr sensor, ubyte accelRange=DIMU_ACC_RANGE_8G, ubyte gyroRange=DIMU_GYRO_RANGE_250, bool lpfenable=true);
-#endif
+
 
 /**
  * Configure the gyro
@@ -237,8 +202,8 @@ void DIMUreadGyroAxes(tSensors link, float &_x, float &_y, float &_z){
     return;
   }
 
-  _y = (DIMU_I2CReply[0]+((long)(DIMU_I2CReply[1]<<8)))/DIMU_Gyro_divisor[link];
-  _x = (DIMU_I2CReply[2]+((long)(DIMU_I2CReply[3]<<8)))/DIMU_Gyro_divisor[link];
+  _x = (DIMU_I2CReply[0]+((long)(DIMU_I2CReply[1]<<8)))/DIMU_Gyro_divisor[link];
+  _y = (DIMU_I2CReply[2]+((long)(DIMU_I2CReply[3]<<8)))/DIMU_Gyro_divisor[link];
   _z = (DIMU_I2CReply[4]+((long)(DIMU_I2CReply[5]<<8)))/DIMU_Gyro_divisor[link];
 }
 
@@ -402,101 +367,10 @@ void DIMUcalAccel(tSensors link){
 }
 
 
-bool DIMUconfigIMU(tSensors link, ubyte accelRange, ubyte gyroRange, bool lpfenable)
-{
-  if (!DIMUconfigGyro(link, gyroRange, lpfenable))
-    return false;
-
-  return DIMUconfigAccel(link, accelRange);
-}
-
-
-#ifdef STRUCT_CODE_ENABLED
-bool DIMUconfigGyro(tDIMUdataPtr sensor, ubyte range, bool lpfenable)
-{
-	memset(sensor->I2CRequest, 0, sizeof(tByteArray));
-
-	// Setup the size and address, same for all requests.
-	sensor->I2CRequest[0] = 3;    // Sending address, register, value. Optional, defaults to true
-	sensor->I2CRequest[1] = 0xD2; // I2C Address of gyro.
-
-	// Write CTRL_REG2
-	// No High Pass Filter
-	sensor->I2CRequest[2] = DIMU_GYRO_CTRL_REG2;
-	sensor->I2CRequest[3] = 0x00;
-	if (!writeI2C(link, sensor->I2CRequest))
-	  return false;
-
-	// Write CTRL_REG3
-	// No interrupts.  Date ready.
-	////////////////////////////////////////////////////////////////////////////
-	sensor->I2CRequest[2] = DIMU_GYRO_CTRL_REG3;      // Register address of CTRL_REG3
-	sensor->I2CRequest[3] = 0x08;      // No interrupts.  Date ready.
-	if(!writeI2C(link, sensor->I2CRequest))
-	  return false;
-
-	// Write CTRL_REG4
-	// Full scale range.
-	sensor->I2CRequest = DIMU_GYRO_CTRL_REG4;
-	sensor->I2CRequest[3] = range + DIMU_CTRL4_BLOCKDATA;
-	writeI2C(link, sensor->I2CRequest);
-
-	//Write CTRL_REG5
-	sensor->I2CRequest[2] = DIMU_GYRO_CTRL_REG5;      // Register address of CTRL_REG5
-	sensor->I2CRequest[3] = (lpfenable) ? 0x02 : 0x00;      // filtering - low pass
-	if (!writeI2C(link, sensor->I2CRequest))
-	  return false;
-
-	// Write CTRL_REG1
-	// Enable all axes. Disable power down.
-	sensor->I2CRequest[2] = DIMU_GYRO_CTRL_REG1;
-	sensor->I2CRequest[3] = 0x0F;
-	if (!writeI2C(link, sensor->I2CRequest))
-	  return false;
-
-	// Set DIMU_Gyro_divisor so that the output of our gyro axis readings can be turned
-	// into scaled values.
-	///////////////////////////////////////////////////////////////////////////
-	if(range == 0)
-	  DIMU_Gyro_divisor[link] = 114.28571;      // Full scale range is 250 dps.
-  else if (range == 0x10)
-    DIMU_Gyro_divisor[link] = 57.142857;       // Full scale range is 500 dps.
-	else if (range == 0x30)
-	  DIMU_Gyro_divisor[link] = 14.285714;       // Full scale range is 2000 dps.
-
-	return true;
-}
-
-void DIMUreadGyroAxes(tDIMUdataPtr sensor)
-{
-
-}
-bool DIMUconfigAccel(tDIMUdataPtr sensor, ubyte range)
-{
-
-}
-void DIMUreadAccelAxes8Bit(tDIMUdataPtr sensor)
-{
-
-}
-void DIMUreadAccelAxes10Bit(tDIMUdataPtr sensor)
-{
-
-}
-void DIMUcalAccel(tDIMUdataPtr sensor)
-{
-
-}
-bool DIMUconfigIMU(tDIMUdataPtr sensor, ubyte accelRange, ubyte gyroRange, bool lpfenable)
-{
-
-}
-#endif
-
 #endif // __DIMU_H__
 
 /*
- * $Id: dexterind-imu.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: dexterind-imu.h 123 2012-11-02 16:35:15Z xander $
  */
 /* @} */
 /* @} */

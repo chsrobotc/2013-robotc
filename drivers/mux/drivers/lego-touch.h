@@ -6,7 +6,7 @@
  */
 
 /*
- * $Id: lego-touch.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: lego-touch.h 123 2012-11-02 16:35:15Z xander $
  */
 
 #ifndef __LEGOTS_H__
@@ -21,8 +21,7 @@
  *
  * License: You may use this code as you wish, provided you give credit where its due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  * \author Xander Soldaat (xander_at_botbench.com)
  * \date 08 December 2009
  * \version 0.1
@@ -50,7 +49,7 @@ bool TSreadState(tMUXSensor muxsensor);
  * @return true if the sensor is pressed, false if it's not
  */
 bool TSreadState(tSensors link) {
-  if ((SensorType[link] !=  sensorTouch) && SensorMode[link] != modeBoolean) {
+  if ((SensorType(link) !=  sensorTouch) && SensorMode(link) != modeBoolean) {
     SetSensorType(link, sensorTouch);
     SetSensorMode(link, modeBoolean);
     wait1Msec(10);
@@ -75,7 +74,7 @@ bool TSreadState(tMUXSensor muxsensor) {
 #endif // __LEGOTS_H__
 
 /*
- * $Id: lego-touch.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: lego-touch.h 123 2012-11-02 16:35:15Z xander $
  */
 /* @} */
 /* @} */

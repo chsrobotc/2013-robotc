@@ -6,7 +6,7 @@
  */
 
 /*
- * $Id: mindsensors-lineleader.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: mindsensors-lineleader.h 123 2012-11-02 16:35:15Z xander $
  */
 
 #ifndef __MSLL_H__
@@ -30,8 +30,7 @@
  *
  * License: You may use this code as you wish, provided you give credit where it's due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  * \author Thom Roach
  * \author Xander Soldaat (version 0.4+)
  * \date 29 October 2009
@@ -634,7 +633,7 @@ bool LLreadBlackThresh(tSensors link, tByteArray &pMsg) {
 #endif // __MSLL_H__
 
 /*
- * $Id: mindsensors-lineleader.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: mindsensors-lineleader.h 123 2012-11-02 16:35:15Z xander $
  */
 /* @} */
 /* @} */

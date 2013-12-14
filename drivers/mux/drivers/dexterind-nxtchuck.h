@@ -5,7 +5,7 @@
 * @{
 */
 /*
- * $Id: dexterind-nxtchuck.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: dexterind-nxtchuck.h 112 2012-10-04 17:44:38Z xander $
  */
 
 #ifndef __NXTCHUCK_H__
@@ -23,8 +23,7 @@
  *
  * License: You may use this code as you wish, provided you give credit where its due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  * \author Xander Soldaat (xander_at_botbench.com)
  * \date 02 November 2012
  * \version 0.1
@@ -313,7 +312,7 @@ bool NXTChuckReadClassicController(tSensors link, tClassicCtrl &controller){
 #endif // __NXTCHUCK_H__
 
 /*
- * $Id: dexterind-nxtchuck.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: dexterind-nxtchuck.h 112 2012-10-04 17:44:38Z xander $
  */
 /* @} */
 /* @} */

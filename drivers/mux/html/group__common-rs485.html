@@ -42,14 +42,12 @@ Files</h2></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common-rs485.html#ga7c456c09f2a2dd29ff53d20c8a77f42b">RS485write</a> (<a class="el" href="group__common.html#gaf1da7edf6615d1b2376642de9bbfe449">tMassiveArray</a> &amp;buf, ubyte len)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common-rs485.html#gaaf7c3831c4bf35f0a581890749bd8b0e">RS485read</a> (<a class="el" href="group__common.html#gaf1da7edf6615d1b2376642de9bbfe449">tMassiveArray</a> &amp;buf, int &amp;len, int timeout=100)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common-rs485.html#gafb61bcb086da154a0332cc703c340998">RS485read</a> (<a class="el" href="group__common.html#gaf1da7edf6615d1b2376642de9bbfe449">tMassiveArray</a> &amp;buf, ubyte &amp;len, int timeout=100)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common-rs485.html#gaa4304b64044355323adc1c6c7356ee44">RS485readLargeResponse</a> (<a class="el" href="group__common.html#gaf1da7edf6615d1b2376642de9bbfe449">tMassiveArray</a> &amp;buf, int &amp;len, int timeout=100)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common-rs485.html#ga8cc30dfc87646c9abff0265a7c254261">RS485appendToBuff</a> (<a class="el" href="group__common.html#gaf1da7edf6615d1b2376642de9bbfe449">tMassiveArray</a> &amp;buf, const short index, const ubyte *pData, const short nLength)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common-rs485.html#ga67eeb276d156f9bf930ac0e1d957f864">RS485appendToBuff</a> (<a class="el" href="group__common.html#gaf1da7edf6615d1b2376642de9bbfe449">tMassiveArray</a> &amp;buf, const short index, string pData)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common-rs485.html#ga681eadb60516210bbd261bc50d80dab7">RS485initLib</a> (long baudrate=230400)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common-rs485.html#ga4446a74148d4d8d4f387a3bb08080f85">RS485clearRead</a> (bool sendnewline=false)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common-rs485.html#gadb0d2f59860d233f035b318570e80f06">RS485sendString</a> (string &amp;data)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common-rs485.html#gafd61d7ec179089ebc16ba481e8f732f1">RS485sendString</a> (char *data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common-rs485.html#ga0706f33ba2fb81f55a480e45f454995c">RS485clearRead</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common-rs485.html#ga988a2a4cff477b9320e5953ef00bd5e5">rxTimer</a></td></tr>
@@ -118,9 +116,9 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the new 'tail' position of buf at which to append. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="benedettelli-nxt2wifi-test3_8c-example.html#a17">benedettelli-nxt2wifi-test3.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="benedettelli-nxt2wifi-test3_8c-example.html#a21">benedettelli-nxt2wifi-test3.c</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="common-rs485_8h_source.html#l00176">176</a> of file <a class="el" href="common-rs485_8h_source.html">common-rs485.h</a>.</p>
+<p>Definition at line <a class="el" href="common-rs485_8h_source.html#l00173">173</a> of file <a class="el" href="common-rs485_8h_source.html">common-rs485.h</a>.</p>
 
 </div>
 </div>
@@ -175,27 +173,25 @@ Variables</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the new 'tail' position of buf at which to append. </dd></dl>
 
-<p>Definition at line <a class="el" href="common-rs485_8h_source.html#l00192">192</a> of file <a class="el" href="common-rs485_8h_source.html">common-rs485.h</a>.</p>
+<p>Definition at line <a class="el" href="common-rs485_8h_source.html#l00189">189</a> of file <a class="el" href="common-rs485_8h_source.html">common-rs485.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ga4446a74148d4d8d4f387a3bb08080f85"></a><!-- doxytag: member="common&#45;rs485.h::RS485clearRead" ref="ga4446a74148d4d8d4f387a3bb08080f85" args="(bool sendnewline=false)" -->
+<a class="anchor" id="ga0706f33ba2fb81f55a480e45f454995c"></a><!-- doxytag: member="common&#45;rs485.h::RS485clearRead" ref="ga0706f33ba2fb81f55a480e45f454995c" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void RS485clearRead </td>
           <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"> <em>sendnewline</em> = <code>false</code>&#160;)</td>
+          <td class="paramname">&#160;)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="benedettelli-nxt2wifi-test3_8c-example.html#a11">benedettelli-nxt2wifi-test3.c</a>.</dd>
-</dl>
-<p>Definition at line <a class="el" href="common-rs485_8h_source.html#l00248">248</a> of file <a class="el" href="common-rs485_8h_source.html">common-rs485.h</a>.</p>
+
+<p>Definition at line <a class="el" href="common-rs485_8h_source.html#l00245">245</a> of file <a class="el" href="common-rs485_8h_source.html">common-rs485.h</a>.</p>
 
 </div>
 </div>
@@ -216,11 +212,11 @@ Variables</h2></td></tr>
 <p>Initialise the port, setup buffers </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="benedettelli-nxt2wifi-test1_8c-example.html#a5">benedettelli-nxt2wifi-test1.c</a>, <a class="el" href="benedettelli-nxt2wifi-test2_8c-example.html#a2">benedettelli-nxt2wifi-test2.c</a>, <a class="el" href="benedettelli-nxt2wifi-test3_8c-example.html#a1">benedettelli-nxt2wifi-test3.c</a>, and <a class="el" href="benedettelli-nxt2wifi-test4_8c-example.html#a1">benedettelli-nxt2wifi-test4.c</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="common-rs485_8h_source.html#l00237">237</a> of file <a class="el" href="common-rs485_8h_source.html">common-rs485.h</a>.</p>
+<p>Definition at line <a class="el" href="common-rs485_8h_source.html#l00234">234</a> of file <a class="el" href="common-rs485_8h_source.html">common-rs485.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="gaaf7c3831c4bf35f0a581890749bd8b0e"></a><!-- doxytag: member="common&#45;rs485.h::RS485read" ref="gaaf7c3831c4bf35f0a581890749bd8b0e" args="(tMassiveArray &amp;buf, int &amp;len, int timeout=100)" -->
+<a class="anchor" id="gafb61bcb086da154a0332cc703c340998"></a><!-- doxytag: member="common&#45;rs485.h::RS485read" ref="gafb61bcb086da154a0332cc703c340998" args="(tMassiveArray &amp;buf, ubyte &amp;len, int timeout=100)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -233,7 +229,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramtype">ubyte &amp;&#160;</td>
           <td class="paramname"> <em>len</em>, </td>
         </tr>
         <tr>
@@ -261,7 +257,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>true if no error occured, false if it did </dd></dl>
 
-<p>Definition at line <a class="el" href="common-rs485_8h_source.html#l00091">91</a> of file <a class="el" href="common-rs485_8h_source.html">common-rs485.h</a>.</p>
+<p>Definition at line <a class="el" href="common-rs485_8h_source.html#l00090">90</a> of file <a class="el" href="common-rs485_8h_source.html">common-rs485.h</a>.</p>
 
 </div>
 </div>
@@ -306,45 +302,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>true if no error occured, false if it did </dd></dl>
 
-<p>Definition at line <a class="el" href="common-rs485_8h_source.html#l00129">129</a> of file <a class="el" href="common-rs485_8h_source.html">common-rs485.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="gadb0d2f59860d233f035b318570e80f06"></a><!-- doxytag: member="common&#45;rs485.h::RS485sendString" ref="gadb0d2f59860d233f035b318570e80f06" args="(string &amp;data)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool RS485sendString </td>
-          <td>(</td>
-          <td class="paramtype">string &amp;&#160;</td>
-          <td class="paramname"> <em>data</em>&#160;)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="common-rs485_8h_source.html#l00263">263</a> of file <a class="el" href="common-rs485_8h_source.html">common-rs485.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="gafd61d7ec179089ebc16ba481e8f732f1"></a><!-- doxytag: member="common&#45;rs485.h::RS485sendString" ref="gafd61d7ec179089ebc16ba481e8f732f1" args="(char *data)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool RS485sendString </td>
-          <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"> <em>data</em>&#160;)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="common-rs485_8h_source.html#l00269">269</a> of file <a class="el" href="common-rs485_8h_source.html">common-rs485.h</a>.</p>
+<p>Definition at line <a class="el" href="common-rs485_8h_source.html#l00126">126</a> of file <a class="el" href="common-rs485_8h_source.html">common-rs485.h</a>.</p>
 
 </div>
 </div>
@@ -382,7 +340,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>true if no error occured, false if it did </dd></dl>
 
-<p>Definition at line <a class="el" href="common-rs485_8h_source.html#l00052">52</a> of file <a class="el" href="common-rs485_8h_source.html">common-rs485.h</a>.</p>
+<p>Definition at line <a class="el" href="common-rs485_8h_source.html#l00051">51</a> of file <a class="el" href="common-rs485_8h_source.html">common-rs485.h</a>.</p>
 
 </div>
 </div>
@@ -398,7 +356,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="common-rs485_8h_source.html#l00041">41</a> of file <a class="el" href="common-rs485_8h_source.html">common-rs485.h</a>.</p>
+<p>Definition at line <a class="el" href="common-rs485_8h_source.html#l00040">40</a> of file <a class="el" href="common-rs485_8h_source.html">common-rs485.h</a>.</p>
 
 </div>
 </div>
@@ -413,9 +371,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>128 bit array for receiving </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="benedettelli-nxt2wifi-test1_8c-example.html#a4">benedettelli-nxt2wifi-test1.c</a>, and <a class="el" href="benedettelli-nxt2wifi-test2_8c-example.html#a1">benedettelli-nxt2wifi-test2.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="benedettelli-nxt2wifi-test1_8c-example.html#a4">benedettelli-nxt2wifi-test1.c</a>, <a class="el" href="benedettelli-nxt2wifi-test2_8c-example.html#a1">benedettelli-nxt2wifi-test2.c</a>, and <a class="el" href="benedettelli-nxt2wifi-test3_8c-example.html#a2">benedettelli-nxt2wifi-test3.c</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="common-rs485_8h_source.html#l00043">43</a> of file <a class="el" href="common-rs485_8h_source.html">common-rs485.h</a>.</p>
+<p>Definition at line <a class="el" href="common-rs485_8h_source.html#l00042">42</a> of file <a class="el" href="common-rs485_8h_source.html">common-rs485.h</a>.</p>
 
 </div>
 </div>
@@ -430,9 +388,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>128 bit array for transmission </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="benedettelli-nxt2wifi-test1_8c-example.html#a6">benedettelli-nxt2wifi-test1.c</a>, and <a class="el" href="benedettelli-nxt2wifi-test2_8c-example.html#a3">benedettelli-nxt2wifi-test2.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="benedettelli-nxt2wifi-test1_8c-example.html#a6">benedettelli-nxt2wifi-test1.c</a>, <a class="el" href="benedettelli-nxt2wifi-test2_8c-example.html#a3">benedettelli-nxt2wifi-test2.c</a>, and <a class="el" href="benedettelli-nxt2wifi-test3_8c-example.html#a3">benedettelli-nxt2wifi-test3.c</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="common-rs485_8h_source.html#l00044">44</a> of file <a class="el" href="common-rs485_8h_source.html">common-rs485.h</a>.</p>
+<p>Definition at line <a class="el" href="common-rs485_8h_source.html#l00043">43</a> of file <a class="el" href="common-rs485_8h_source.html">common-rs485.h</a>.</p>
 
 </div>
 </div>
@@ -448,12 +406,12 @@ Variables</h2></td></tr>
 <div class="memdoc">
 <p>timer for receiving timeouts </p>
 
-<p>Definition at line <a class="el" href="common-rs485_8h_source.html#l00039">39</a> of file <a class="el" href="common-rs485_8h_source.html">common-rs485.h</a>.</p>
+<p>Definition at line <a class="el" href="common-rs485_8h_source.html#l00038">38</a> of file <a class="el" href="common-rs485_8h_source.html">common-rs485.h</a>.</p>
 
 </div>
 </div>
 </div>
-<hr class="footer"/><address class="footer"><small>Generated on Wed Mar 13 2013 19:56:44 for ROBOTC Drivers by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Nov 2 2012 17:45:52 for ROBOTC Drivers by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

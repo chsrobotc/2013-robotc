@@ -27,7 +27,7 @@ task main() {
 
   while(true) {
     // Get the value from the LEGO sound sensor.
-    sonarvalue = SensorValue[US_PORT];
+    sonarvalue = SensorValue(US_PORT);
 
     // Set the output bit based on the analogue input value
     bit = sonarvalue / 10;

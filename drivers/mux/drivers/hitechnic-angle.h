@@ -6,7 +6,7 @@
  */
 
 /*
- * $Id: hitechnic-angle.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: hitechnic-angle.h 123 2012-11-02 16:35:15Z xander $
  */
 
 #ifndef __HTANG_H__
@@ -26,8 +26,7 @@
  *
  * License: You may use this code as you wish, provided you give credit where its due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  * \author Xander Soldaat (xander_at_botbench.com)
  * \date 20 February 2011
  * \version 0.2
@@ -94,7 +93,7 @@ int HTANGreadAngle(tSensors link) {
   if (!writeI2C(link, HTANG_I2CRequest, HTANG_I2CReply, 2))
     return -1;
 
-  return (HTANG_I2CReply[0] * 2) + HTANG_I2CReply[1];
+  return HTANG_I2CReply[0] * 2 + HTANG_I2CReply[1];
 }
 
 
@@ -114,7 +113,7 @@ int HTANGreadAngle(tMUXSensor muxsensor) {
     return -1;
   }
 
-  return (HTANG_I2CReply[0] * 2) + HTANG_I2CReply[1];
+  return HTANG_I2CReply[0] * 2 + HTANG_I2CReply[1];
 }
 #endif // __HTSMUX_SUPPORT__
 
@@ -253,7 +252,7 @@ bool _HTANGsendCommand(tSensors link, byte command) {
 #endif // __HTANG_H__
 
  /*
- * $Id: hitechnic-angle.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: hitechnic-angle.h 123 2012-11-02 16:35:15Z xander $
  */
 /* @} */
 /* @} */

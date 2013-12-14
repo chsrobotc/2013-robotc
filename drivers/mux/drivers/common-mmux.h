@@ -7,7 +7,7 @@
 
 
 /*
- * $Id: common-mmux.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: common-mmux.h 123 2012-11-02 16:35:15Z xander $
  */
 
 /** \file common-MMUX.h
@@ -18,8 +18,7 @@
  *
  * License: You may use this code as you wish, provided you give credit where its due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  *
  * Changelog:
  * - 0.1: Initial release split from common.h
@@ -84,7 +83,7 @@ mmuxDataT mmuxData[4];  /*!< Holds all the MMUX info, one for each sensor port *
 #endif // __MMUX_H__
 
 /*
- * $Id: common-mmux.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: common-mmux.h 123 2012-11-02 16:35:15Z xander $
  */
 /* @} */
 /* @} */

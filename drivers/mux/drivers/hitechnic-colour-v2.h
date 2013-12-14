@@ -6,7 +6,7 @@
  */
 
 /*
- * $Id: hitechnic-colour-v2.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: hitechnic-colour-v2.h 123 2012-11-02 16:35:15Z xander $
  */
 
 #ifndef __HTCS2_H__
@@ -28,8 +28,7 @@
  *
  * License: You may use this code as you wish, provided you give credit where its due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  * \author Xander Soldaat (xander_at_botbench.com)
  * \date 27 April 2011
  * \version 0.4
@@ -406,7 +405,7 @@ bool _HTCSsendCommand(tSensors link, byte command) {
 #endif // __HTCS2_H__
 
 /*
- * $Id: hitechnic-colour-v2.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: hitechnic-colour-v2.h 123 2012-11-02 16:35:15Z xander $
  */
 /* @} */
 /* @} */

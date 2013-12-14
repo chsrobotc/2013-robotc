@@ -6,7 +6,7 @@
  */
 
 /*
- * $Id: mindsensors-ps2ctrl-v4.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: mindsensors-ps2ctrl-v4.h 123 2012-11-02 16:35:15Z xander $
  */
 
 #ifndef __PSPV4_H__
@@ -25,8 +25,7 @@
  *
  * License: You may use this code as you wish, provided you give credit where its due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  * \author Xander Soldaat (xander_at_botbench.com)
  * \date 30 July 2012
  * \version 0.1
@@ -344,7 +343,7 @@ long PSPV4readRawRefTXValue(tSensors link, ubyte address = PSPV4_I2C_ADDR)
 #endif // __PSPV4_H__
 
 /*
- * $Id: mindsensors-ps2ctrl-v4.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: mindsensors-ps2ctrl-v4.h 123 2012-11-02 16:35:15Z xander $
  */
 /* @} */
 /* @} */

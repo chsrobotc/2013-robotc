@@ -6,7 +6,7 @@
  */
 
 /*
- * $Id: mindsensors-angle.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: mindsensors-angle.h 125 2012-11-02 16:42:07Z xander $
  */
 
 #ifndef __MSANG_H__
@@ -24,8 +24,7 @@
  *
  * License: You may use this code as you wish, provided you give credit where its due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  * \author Xander Soldaat (xander_at_botbench.com)
  * \date 20 February 2011
  * \version 0.1
@@ -136,7 +135,7 @@ bool MSANGresetAngle(tSensors link) {
 #endif // __MSANG_H__
 
  /*
- * $Id: mindsensors-angle.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: mindsensors-angle.h 125 2012-11-02 16:42:07Z xander $
  */
 /* @} */
 /* @} */

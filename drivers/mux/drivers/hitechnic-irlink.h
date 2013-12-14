@@ -6,7 +6,7 @@
  */
 
 /*
- * $Id: hitechnic-irlink.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: hitechnic-irlink.h 123 2012-11-02 16:35:15Z xander $
  */
 
 #ifndef _HTIRL_H_
@@ -32,8 +32,7 @@
  *
  * License: You may use this code as you wish, provided you give credit where its due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  * \author Xander Soldaat (xander_at_botbench.com)
  * \date 25 May 2010
  * \version 1.4
@@ -429,7 +428,7 @@ void transmitIR(tSensors link, tByteArray &oBuffer, int channel) {
 #endif // _HTIRL_H_
 
 /*
- * $Id: hitechnic-irlink.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: hitechnic-irlink.h 123 2012-11-02 16:35:15Z xander $
  */
 /* @} */
 /* @} */

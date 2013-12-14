@@ -6,7 +6,7 @@
  */
 
 /*
- * $Id: hitechnic-compass.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: hitechnic-compass.h 123 2012-11-02 16:35:15Z xander $
  */
 
 /** \file hitechnic-compass.h
@@ -26,8 +26,7 @@
  *
  * License: You may use this code as you wish, provided you give credit where its due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  * \author Xander Soldaat (xander_at_botbench.com)
  * \date 18 January 2011
  * \version 0.7
@@ -140,7 +139,7 @@ int HTMCreadHeading(tSensors link) {
     return -1;
 
   // Result is made up of two bytes.  Reassemble for final heading.
-  return (HTMC_I2CReply[0] * 2) + HTMC_I2CReply[1];
+  return HTMC_I2CReply[0] * 2 + HTMC_I2CReply[1];
 }
 
 
@@ -161,7 +160,7 @@ int HTMCreadHeading(tMUXSensor muxsensor) {
   }
 
   // Result is made up of two bytes.  Reassemble for final heading.
-  return (HTMC_I2CReply[0] * 2) + HTMC_I2CReply[1];
+  return HTMC_I2CReply[0] * 2 + HTMC_I2CReply[1];
 }
 #endif // __HTSMUX_SUPPORT__
 
@@ -223,7 +222,7 @@ int HTMCsetTarget(tMUXSensor muxsensor, int offset) {
 #endif // __HTSMUX_SUPPORT__
 
 /*
- * $Id: hitechnic-compass.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: hitechnic-compass.h 123 2012-11-02 16:35:15Z xander $
  */
 /* @} */
 /* @} */

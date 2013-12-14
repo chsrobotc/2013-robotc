@@ -152,33 +152,49 @@ task main ()
         <a name="a2"></a><a class="code" href="group___n_x_t2_w_i_f_i.html#ga8ec5d0f6add0e5d953ad690f109a3253">N2WDisconnect</a>();
         <a name="a3"></a><a class="code" href="group___n_x_t2_w_i_f_i.html#ga8cad34ee07c9a294819f0070c94e1720">N2WchillOut</a>();
         wait1Msec(1000);
-  <span class="keywordflow">if</span> (!<a name="a4"></a><a class="code" href="group___n_x_t2_w_i_f_i.html#ga518cfe843bc8f4d042405227a0a2f4ff">N2WCustomExist</a>())
-  {
-    StopTask(updateScreen);
-    wait1Msec(50);
-    eraseDisplay();
-    PlaySound(soundException);
-    nxtDisplayCenteredBigTextLine(1, <span class="stringliteral">&quot;ERROR&quot;</span>);
-    nxtDisplayTextLine(3, <span class="stringliteral">&quot;No custom profile&quot;</span>);
-    nxtDisplayTextLine(4, <span class="stringliteral">&quot;configured!!&quot;</span>);
-    <span class="keywordflow">while</span>(<span class="keyword">true</span>) EndTimeSlice();
-  }
-
-  <a name="a5"></a><a class="code" href="group___n_x_t2_w_i_f_i.html#gac54a69b33b3a29473e8b4e80f993a401">N2WLoad</a>();
-
+        <span class="comment">// enable DHCP</span>
+        <a name="a4"></a><a class="code" href="group___n_x_t2_w_i_f_i.html#ga6c52b871d1aed83b3dee0c69369b4dd5">N2WsetDHCP</a>(<span class="keyword">true</span>);
+        wait1Msec(100);
+        <span class="comment">// Disable adhoc</span>
+        <a name="a5"></a><a class="code" href="group___n_x_t2_w_i_f_i.html#ga1e5b1d9289e2509b55bff7910b684391">N2WsetAdHoc</a>(<span class="keyword">false</span>);
         wait1Msec(100);
 
-        <a name="a6"></a><a class="code" href="group___n_x_t2_w_i_f_i.html#gaa0c803e53ea5cd1221aed19eea5463f4">N2WConnect</a>(<span class="keyword">true</span>);
+        <span class="comment">// Network Configuration</span>
+        <a name="a6"></a><a class="code" href="group___n_x_t2_w_i_f_i.html#ga83de8a557b9f8fd353d23ddc51d504f9">N2WsetMask</a>(<span class="stringliteral">&quot;255.255.255.0&quot;</span>);
+        wait1Msec(100);
+        <a name="a7"></a><a class="code" href="group___n_x_t2_w_i_f_i.html#gafb777c708309b5c4cd60d89e23715c00">N2WsetGateway</a>(<span class="stringliteral">&quot;10.0.0.138&quot;</span>);
+        wait1Msec(100);
+        <a name="a8"></a><a class="code" href="group___n_x_t2_w_i_f_i.html#gaaebef4a719423f5116644ac1aeecc761">N2WsetDNS1</a>(<span class="stringliteral">&quot;8.8.8.8&quot;</span>);
+        wait1Msec(100);
+        <a name="a9"></a><a class="code" href="group___n_x_t2_w_i_f_i.html#ga378d37e736e65129349ee607b310789a">N2WsetDNS2</a>(<span class="stringliteral">&quot;8.8.4.4&quot;</span>);
+        wait1Msec(100);
+        <a name="a10"></a><a class="code" href="group___n_x_t2_w_i_f_i.html#ga6fbee78a45297f6c914bde21f28092b8">N2WsetNetbiosName</a>(<span class="stringliteral">&quot;NXT2WIFI1&quot;</span>);
+        wait1Msec(100);
+
+        <span class="comment">// SSID to connect to</span>
+        <a name="a11"></a><a class="code" href="group___n_x_t2_w_i_f_i.html#ga54b23c839a31c2223453e622f4867440">N2WsetSSID</a>(<span class="stringliteral">&quot;test&quot;</span>);
+        wait1Msec(100);
+        <span class="comment">// The passphrase to use</span>
+        <a name="a12"></a><a class="code" href="group___n_x_t2_w_i_f_i.html#ga37d426a308e6e59ba6ed37f086a26b7d">N2WSecurityWPA2Passphrase</a>(<span class="stringliteral">&quot;pwasde08&quot;</span>);
+        wait1Msec(100);
+        <span class="comment">// Save this profile to the custom profile</span>
+        <a name="a13"></a><a class="code" href="group___n_x_t2_w_i_f_i.html#ga553560298f91e301e85f226c21096f09">N2WSave</a>();
+        wait1Msec(500);
+        <span class="comment">// Load the custom profile</span>
+        <a name="a14"></a><a class="code" href="group___n_x_t2_w_i_f_i.html#gac54a69b33b3a29473e8b4e80f993a401">N2WLoad</a>();
+        wait1Msec(100);
+
+        <a name="a15"></a><a class="code" href="group___n_x_t2_w_i_f_i.html#gaa0c803e53ea5cd1221aed19eea5463f4">N2WConnect</a>(<span class="keyword">true</span>);
         connStatus = <span class="stringliteral">&quot;connecting&quot;</span>;
 
-        <span class="keywordflow">while</span> (!<a name="a7"></a><a class="code" href="group___n_x_t2_w_i_f_i.html#ga2012c5479768124f2083dc643d7b4573">N2WConnected</a>()) wait1Msec(100);
+        <span class="keywordflow">while</span> (!<a name="a16"></a><a class="code" href="group___n_x_t2_w_i_f_i.html#ga2012c5479768124f2083dc643d7b4573">N2WConnected</a>()) wait1Msec(100);
         wait1Msec(1000);
 
         connStatus = <span class="stringliteral">&quot;connected&quot;</span>;
         PlaySound(soundBeepBeep);
 
         wait1Msec(3000);
-        <a name="a8"></a><a class="code" href="group___n_x_t2_w_i_f_i.html#ga75f932c01ab7aaf3ba965179b2773215">N2WgetIP</a>(IPaddress);
+        <a name="a17"></a><a class="code" href="group___n_x_t2_w_i_f_i.html#ga75f932c01ab7aaf3ba965179b2773215">N2WgetIP</a>(IPaddress);
 
         wait1Msec(1000);
         <span class="comment">//                123456789012345</span>
@@ -186,7 +202,7 @@ task main ()
         <span class="comment">//                on  | 011 |   1&quot;</span>
         <span class="keywordflow">while</span> (<span class="keyword">true</span>)
         {
-                <span class="keywordflow">if</span> (<a name="a9"></a><a class="code" href="group___n_x_t2_w_i_f_i.html#ga51eb3a733a2308f77d380db47496397e">N2WreadWS</a>(type, ID, state, value))
+                <span class="keywordflow">if</span> (<a name="a18"></a><a class="code" href="group___n_x_t2_w_i_f_i.html#ga51eb3a733a2308f77d380db47496397e">N2WreadWS</a>(type, ID, state, value))
                 {
                         writeDebugStreamLine(<span class="stringliteral">&quot;btn: %d, state: %d&quot;</span>, ID, state);
                         <span class="keywordflow">switch</span> (ID)
@@ -208,12 +224,12 @@ task main ()
 
                 <span class="comment">// Fetch the state of the Touch Sensor</span>
                 <span class="comment">// This value is displayed by field 0 (in0) on the page</span>
-                currTouchState = SensorBoolean[TOUCH];
+                currTouchState = SensorValue[TOUCH];
                 <span class="keywordflow">if</span> (currTouchState != prevTouchState)
                 {
-                  memset(data, 0, <span class="keyword">sizeof</span>(data));
-                        data[0] = (currTouchState) ? <span class="charliteral">&#39;1&#39;</span> : <span class="charliteral">&#39;0&#39;</span>;
-                        <a name="a10"></a><a class="code" href="group___n_x_t2_w_i_f_i.html#ga007dff56d153169bea6f5419d05c61b9">N2WwriteWS</a>(1, 0, data, 2);
+                        sprintf(dataString, <span class="stringliteral">&quot;%d&quot;</span>, currTouchState);
+                        memcpy(data, dataString, strlen(dataString));
+                        <a name="a19"></a><a class="code" href="group___n_x_t2_w_i_f_i.html#ga007dff56d153169bea6f5419d05c61b9">N2WwriteWS</a>(1, 0, data, strlen(&amp;data));
                         prevTouchState = currTouchState;
                         <a class="code" href="group___n_x_t2_w_i_f_i.html#ga8cad34ee07c9a294819f0070c94e1720">N2WchillOut</a>();
                 }
@@ -256,7 +272,7 @@ task main ()
 
                 <span class="comment">// Fetch the tacho count for motor B</span>
                 <span class="comment">// This value is displayed by field 4 (in4) on the page</span>
-                <span class="comment">//currEncMotorB = nMotorEncoder[MOT_LEFT];</span>
+                currEncMotorB = nMotorEncoder[MOT_LEFT];
                 <span class="keywordflow">if</span> (currEncMotorB != prevEncMotorB)
                 {
                         sprintf(dataString, <span class="stringliteral">&quot;%d&quot;</span>, currEncMotorB);
@@ -295,13 +311,13 @@ task main ()
                 sprintf(dataStrings[2], <span class="stringliteral">&quot;A: %d&quot;</span>, currEncMotorA);
                 sprintf(dataStrings[3], <span class="stringliteral">&quot;B: %d&quot;</span>, currEncMotorB);
                 sprintf(dataStrings[4], <span class="stringliteral">&quot;C: %d&quot;</span>, currEncMotorC);
-          sprintf(tmpString, <span class="stringliteral">&quot;%s | %3d&quot;</span>, (currTouchState == 0) ? <span class="stringliteral">&quot;off&quot;</span> : <span class="stringliteral">&quot;on &quot;</span>, currSonarDistance);
+        sprintf(tmpString, <span class="stringliteral">&quot;%s | %3d&quot;</span>, (currTouchState == 0) ? <span class="stringliteral">&quot;off&quot;</span> : <span class="stringliteral">&quot;on &quot;</span>, currSonarDistance);
                 sprintf(dataStrings[1], <span class="stringliteral">&quot;%s | %3d&quot;</span>, tmpString, currDetectedColour);
         }
 }
 </pre></div> </div>
 </div>
-<hr class="footer"/><address class="footer"><small>Generated on Wed Mar 13 2013 19:56:41 for ROBOTC Drivers by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Nov 2 2012 17:45:51 for ROBOTC Drivers by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.2 </small></address>
 </body>

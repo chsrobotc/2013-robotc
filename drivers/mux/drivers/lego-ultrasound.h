@@ -6,7 +6,7 @@
  */
 
 /*
- * $Id: lego-ultrasound.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: lego-ultrasound.h 123 2012-11-02 16:35:15Z xander $
  */
 
 #ifndef __LEGOUS_H__
@@ -17,8 +17,7 @@
  * lego-ultrasound.h provides an API for the Lego US driver.
  *
  * License: You may use this code as you wish, provided you give credit where its due.
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  *
  * Changelog:
  * - 0.1: Initial release
@@ -199,7 +198,7 @@ bool USreset(tSensors link) {
 #endif // __LEGOSNR_H__
 
 /*
- * $Id: lego-ultrasound.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: lego-ultrasound.h 123 2012-11-02 16:35:15Z xander $
  */
 /* @} */
 /* @} */

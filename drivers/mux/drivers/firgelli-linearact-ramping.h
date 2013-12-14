@@ -1,5 +1,5 @@
 /*
- * $Id: firgelli-linearact-ramping.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: firgelli-linearact-ramping.h 123 2012-11-02 16:35:15Z xander $
  */
 
 #ifndef __FLAC_H__
@@ -18,8 +18,7 @@
  *
  * License: You may use this code as you wish, provided you give credit where its due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  * \author Xander Soldaat (mightor@gmail.com), version 0.1
  * \date 16 february 2010
  * \version 0.1
@@ -544,5 +543,5 @@ void FLACmoveLA(tMotor _motor, int highpower, int pos) {
 #endif // __FLAC_H__
 
 /*
- * $Id: firgelli-linearact-ramping.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: firgelli-linearact-ramping.h 123 2012-11-02 16:35:15Z xander $
  */

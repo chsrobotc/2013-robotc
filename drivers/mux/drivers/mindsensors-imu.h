@@ -6,7 +6,7 @@
  */
 
 /*
- * $Id: mindsensors-imu.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: mindsensors-imu.h 123 2012-11-02 16:35:15Z xander $
  */
 
 #ifndef __MSIMU_H__
@@ -24,8 +24,7 @@
  *
  * License: You may use this code as you wish, provided you give credit where its due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  * \author Xander Soldaat (xander_at_botbench.com)
  * \date 23 August 2012
  * \version 0.1
@@ -49,7 +48,6 @@
 #define MSIMU_REG_COMPASS_HEADING     0x4B  /*!< Compass heading */
 #define MSIMU_REG_COMPASS_ALL_FIELDS  0x4D  /*!< All magnetic fields for compass */
 #define MSIMU_REG_GYRO_ALL_AXES       0x53  /*!< All Axes for Gyro */
-#define MSIMU_REG_GYRO_FILTER         0x5A  /*!< Filter level for Gyro */
 
 #define MSIMU_CMD_COMPASS_START_CAL   0x43  /*!< Accelerometer 2G range */
 #define MSIMU_CMD_COMPASS_STOP_CAL    0x63  /*!< Accelerometer 2G range */
@@ -58,16 +56,6 @@
 #define MSIMU_CMD_ACC_RANGE_4G        0x32  /*!< Accelerometer 4G range */
 #define MSIMU_CMD_ACC_RANGE_8G        0x33  /*!< Accelerometer 8G range */
 #define MSIMU_CMD_ACC_RANGE_16G       0x34  /*!< Accelerometer 16G range */
-
-#define MSIMU_GYRO_FILTER_NONE        0     /*!< Gyro filter level: none */
-#define MSIMU_GYRO_FILTER_LEVEL_1     1     /*!< Gyro filter level: 1 */
-#define MSIMU_GYRO_FILTER_LEVEL_2     2     /*!< Gyro filter level: 2 */
-#define MSIMU_GYRO_FILTER_LEVEL_3     3     /*!< Gyro filter level: 3 */
-#define MSIMU_GYRO_FILTER_LEVEL_4     4     /*!< Gyro filter level: 4 (default) */
-#define MSIMU_GYRO_FILTER_LEVEL_5     5     /*!< Gyro filter level: 5 */
-#define MSIMU_GYRO_FILTER_LEVEL_6     6     /*!< Gyro filter level: 6 */
-#define MSIMU_GYRO_FILTER_LEVEL_7     7     /*!< Gyro filter level: 7 (highest) */
-
 
 #define MSIMU_TILT_X_AXIS           MSIMU_REG_TILT_X_AXIS
 #define MSIMU_TILT_Y_AXIS           MSIMU_REG_TILT_Y_AXIS
@@ -90,7 +78,6 @@ bool MSIMUreadGyroAxes(tSensors link, int &_x, int &_y, int &_z);
 bool MSIMUreadAccelAxes(tSensors link, int &_x, int &_y, int &_z);
 bool MSIMUreadMagneticFields(tSensors link,  int &_x, int &_y, int &_z);
 int MSIMUreadHeading(tSensors link);
-bool MSIMUsetGyroFilter(tSensors link, ubyte level);
 
 
 /**
@@ -225,26 +212,10 @@ int MSIMUreadHeading(tSensors link)
 }
 
 
-/**
- * Set the level of filtering of the Gryo readings.
- * @param link the port number
- * @param level the level of filtering (0-7) where 0 is none and 7 is the highest amount of filtering, 4 is the default level.
- * @return true if no error occured, false if it did
- */
-bool MSIMUsetGyroFilter(tSensors link, ubyte level)
-{
-	MSIMU_I2CRequest[0] = 3;                        // Message size
-  MSIMU_I2CRequest[1] = MSIMU_IMU_I2C_ADDR;      // I2C Address
-	MSIMU_I2CRequest[2] = MSIMU_REG_GYRO_FILTER;  // Register address
-	MSIMU_I2CRequest[3] = level;  // filtering level
-
-  return writeI2C(link, MSIMU_I2CRequest);
-}
-
 #endif // __MSIMU_H__
 
 /*
- * $Id: mindsensors-imu.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: mindsensors-imu.h 123 2012-11-02 16:35:15Z xander $
  */
 /* @} */
 /* @} */

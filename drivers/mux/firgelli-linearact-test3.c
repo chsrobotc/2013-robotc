@@ -1,5 +1,5 @@
 /*
- * $Id: firgelli-linearact-test3.c 133 2013-03-10 15:15:38Z xander $
+ * $Id: firgelli-linearact-test3.c 123 2012-11-02 16:35:15Z xander $
  */
 
 /**
@@ -17,8 +17,7 @@
  *
  * License: You may use this code as you wish, provided you give credit where it's due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  * Xander Soldaat (xander_at_botbench.com)
  * 15 february 2010
  * version 0.1
@@ -60,5 +59,5 @@ task main () {
 }
 
 /*
- * $Id: firgelli-linearact-test3.c 133 2013-03-10 15:15:38Z xander $
+ * $Id: firgelli-linearact-test3.c 123 2012-11-02 16:35:15Z xander $
  */

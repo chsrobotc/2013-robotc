@@ -6,7 +6,7 @@
  */
 
 /*
- * $Id: holitdata-motormux.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: holitdata-motormux.h 123 2012-11-02 16:35:15Z xander $
  */
 
 #ifndef __HDMMUX_H__
@@ -31,8 +31,7 @@
  *
  * License: You may use this code as you wish, provided you give credit where its due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  * \author Xander Soldaat (xander_at_botbench.com)
  * \date 20 February 2011
  * \version 0.2
@@ -449,7 +448,7 @@ void HDMMotorSetRamping(tMUXmotor muxmotor, ubyte ramping) {
 #endif //  __HDMMUX_H__
 
 /*
- * $Id: holitdata-motormux.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: holitdata-motormux.h 123 2012-11-02 16:35:15Z xander $
  */
 /* @} */
 /* @} */

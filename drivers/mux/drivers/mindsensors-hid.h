@@ -6,7 +6,7 @@
  */
 
 /*
- * $Id: mindsensors-hid.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: mindsensors-hid.h 123 2012-11-02 16:35:15Z xander $
  */
 
 /** \file mindsensors-hid.h
@@ -24,8 +24,7 @@
  *
  * License: You may use this code as you wish, provided you give credit where its due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  * \author Xander Soldaat (xander_at_botbench.com)
  * \date 18 December 2010
  * \version 0.2
@@ -170,7 +169,7 @@ bool MSHIDsendString(tSensors link, string data, ubyte address) {
 #endif // __MSHID_H__
 
 /*
- * $Id: mindsensors-hid.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: mindsensors-hid.h 123 2012-11-02 16:35:15Z xander $
  */
 /* @} */
 /* @} */

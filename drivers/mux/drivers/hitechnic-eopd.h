@@ -6,7 +6,7 @@
  */
 
 /*
- * $Id: hitechnic-eopd.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: hitechnic-eopd.h 123 2012-11-02 16:35:15Z xander $
  */
 
 #ifndef __HTEOPD_H__
@@ -34,8 +34,7 @@
  *
  * License: You may use this code as you wish, provided you give credit where its due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  * \author Xander Soldaat (xander_at_botbench.com)
  * \date 20 February 2011
  * \version 0.6
@@ -50,8 +49,8 @@
 #endif
 
 // This ensures the correct sensor types are used.
-TSensorTypes HTEOPDLRType = sensorAnalogActive;
-TSensorTypes HTEOPDSRType = sensorAnalogInactive;
+TSensorTypes LRType = sensorAnalogActive;
+TSensorTypes SRType = sensorAnalogInactive;
 
 int HTEOPDreadRaw(tSensors link);
 int HTEOPDreadProcessed(tSensors link);
@@ -117,7 +116,7 @@ int HTEOPDreadProcessed(tMUXSensor muxsensor) {
  * @param link the HTEOPD port number
  */
 void HTEOPDsetShortRange(tSensors link) {
-  SetSensorType(link, HTEOPDSRType);
+  SetSensorType(link, SRType);
 }
 
 
@@ -140,7 +139,7 @@ void HTEOPDsetShortRange(tMUXSensor muxsensor) {
  * @param link the HTEOPD port number
  */
 void HTEOPDsetLongRange(tSensors link) {
-  SetSensorType(link, HTEOPDLRType);
+  SetSensorType(link, LRType);
 }
 
 
@@ -158,7 +157,7 @@ void HTEOPDsetLongRange(tMUXSensor muxsensor) {
 #endif // __HTEOPD_H__
 
 /*
- * $Id: hitechnic-eopd.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: hitechnic-eopd.h 123 2012-11-02 16:35:15Z xander $
  */
 /* @} */
 /* @} */

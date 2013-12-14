@@ -5,7 +5,7 @@
  * @{
  */
 /*
- * $Id: hitechnic-superpro.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: hitechnic-superpro.h 123 2012-11-02 16:35:15Z xander $
  */
 
 #ifndef __HTSPB_H__
@@ -20,8 +20,7 @@
  *
  * License: You may use this code as you wish, provided you give credit where its due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  * \author Gustav Jansson (gus_at_hitechnic.com)
  * \date 10 October 2011
  * \version 0.1
@@ -244,7 +243,7 @@ bool HTSPBwriteAnalog(tSensors link, byte dac, byte mode, int freq, int volt) {
 #endif // __HTSPB_H__
 
 /*
- * $Id: hitechnic-superpro.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: hitechnic-superpro.h 123 2012-11-02 16:35:15Z xander $
  */
 /* @} */
 /* @} */

@@ -6,7 +6,7 @@
  */
 
 /*
- * $Id: microchip-mcp23008.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: microchip-mcp23008.h 123 2012-11-02 16:35:15Z xander $
  */
 
 
@@ -23,8 +23,7 @@
  *
  * License: You may use this code as you wish, provided you give credit where it's due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  * \author Xander Soldaat
  * \date 18 June 2009
  * \version 0.4
@@ -187,7 +186,7 @@ bool MCP23008writeIO(tSensors link, byte addr, byte mask) {
 #endif // __MCP23008_H__
 
 /*
- * $Id: microchip-mcp23008.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: microchip-mcp23008.h 123 2012-11-02 16:35:15Z xander $
  */
 /* @} */
 /* @} */

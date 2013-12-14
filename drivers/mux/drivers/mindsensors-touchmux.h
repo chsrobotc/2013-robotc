@@ -6,7 +6,7 @@
  */
 
 /*
- * $Id: mindsensors-touchmux.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: mindsensors-touchmux.h 123 2012-11-02 16:35:15Z xander $
  */
 
 #ifndef __MSTMUX_HIGH___
@@ -25,8 +25,7 @@
  *
  * License: You may use this code as you wish, provided you give credit where its due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  * \author Xander Soldaat (xander_at_botbench.com)
  * \date 24 March 2009
  * \version 0.2
@@ -184,7 +183,7 @@ bool MSTMUXisActive(tMUXSensor muxsensor, int touch) {
 #endif // __MSTMUX_HIGH___
 
 /*
- * $Id: mindsensors-touchmux.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: mindsensors-touchmux.h 123 2012-11-02 16:35:15Z xander $
  */
 /* @} */
 /* @} */

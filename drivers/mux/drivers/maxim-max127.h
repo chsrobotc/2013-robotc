@@ -6,7 +6,7 @@
  */
 
 /*
- * $Id: maxim-max127.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: maxim-max127.h 123 2012-11-02 16:35:15Z xander $
  */
 
 #ifndef __MAX127_H__
@@ -22,8 +22,7 @@
  *
  * License: You may use this code as you wish, provided you give credit where its due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  * \author Xander Soldaat (xander_at_botbench.com)
  * \date 08 March 2009
  * \version 0.5
@@ -75,7 +74,7 @@ int MAX127readChan(tSensors link, byte i2caddress, byte adcchannel) {
 #endif // __MAX127_H__
 
 /*
- * $Id: maxim-max127.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: maxim-max127.h 123 2012-11-02 16:35:15Z xander $
  */
 /* @} */
 /* @} */

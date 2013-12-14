@@ -6,7 +6,7 @@
  */
 
 /*
- * $Id: codatech-rfid.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: codatech-rfid.h 123 2012-11-02 16:35:15Z xander $
  */
 
 #ifndef __CTRFID_driver_H__
@@ -31,8 +31,7 @@
  *
  * License: You may use this code as you wish, provided you give credit where its due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  * \author Sylvain CACHEUX (sylcalego@cacheux.info)
  * \author Xander Soldaat (mightor@gmail.com), version 0.2 and up
  * \date 20 february 2011
@@ -285,7 +284,7 @@ bool CTRFIDreadTransponder(tSensors link, string &transponderID) {
 #endif // __CODATEX_RFID_driver_H__
 
 /*
- * $Id: codatech-rfid.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: codatech-rfid.h 123 2012-11-02 16:35:15Z xander $
  */
 /* @} */
 /* @} */

@@ -6,7 +6,7 @@
  */
 
 /*
- * $Id: mindsensors-nxtcam.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: mindsensors-nxtcam.h 123 2012-11-02 16:35:15Z xander $
  */
 
 #ifndef __NXTCAM_H__
@@ -30,8 +30,7 @@
  *
  * License: You may use this code as you wish, provided you give credit where it's due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  * \author Xander Soldaat
  * \author Gordon Wyeth
  * \date 03 Dec 2010
@@ -216,7 +215,7 @@ int NXTCAMgetBlobs(tSensors link, blob_array &blobs, ubyte address) {
     blobs[_i].y1        = (int)NXTCAM_I2CReply[2];
     blobs[_i].x2        = (int)NXTCAM_I2CReply[3];
     blobs[_i].y2        = (int)NXTCAM_I2CReply[4];
-    blobs[_i].size      = abs(blobs[_i].x2 - blobs[_i].x1) * abs(blobs[_i].y2 - blobs[_i].y1);
+    blobs[_i].size      = abs(blobs[_i].x2 - blobs[_i].x1) * abs(blobs[_i].y2 * blobs[_i].y1);
   }
   return _nblobs;
 }
@@ -389,7 +388,7 @@ void NXTCAMgetCenter(blob_array &blobs, int index, int &x, int &y) {
 #endif // __NXTCAM_H__
 
 /*
- * $Id: mindsensors-nxtcam.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: mindsensors-nxtcam.h 123 2012-11-02 16:35:15Z xander $
  */
 /* @} */
 /* @} */

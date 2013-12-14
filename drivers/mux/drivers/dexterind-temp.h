@@ -6,7 +6,7 @@
  */
 
 /*
- * $Id: dexterind-temp.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: dexterind-temp.h 123 2012-11-02 16:35:15Z xander $
  */
 
 #ifndef __DTMP_DRIVER_H__
@@ -25,8 +25,7 @@
  *
  * License: You may use this code as you wish, provided you give credit where its due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  * \author Xander Soldaat (mightor@gmail.com)
  * \date 13 June 2010
  * \version 0.1
@@ -120,7 +119,7 @@ bool DTMPreadTempF(tSensors link, float &temp) {
 #endif // __DTMP_DRIVER_H__
 
 /*
- * $Id: dexterind-temp.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: dexterind-temp.h 123 2012-11-02 16:35:15Z xander $
  */
 /* @} */
 /* @} */

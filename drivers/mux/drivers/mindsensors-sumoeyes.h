@@ -6,7 +6,7 @@
  */
 
 /*
- * $Id: mindsensors-sumoeyes.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: mindsensors-sumoeyes.h 123 2012-11-02 16:35:15Z xander $
  */
 
 #ifndef __MSSUMO_H__
@@ -24,8 +24,7 @@
  *
  * License: You may use this code as you wish, provided you give credit where its due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  * \author Xander Soldaat (xander_at_botbench.com)
  * \date 30 October 2011
  * \version 0.1
@@ -39,8 +38,8 @@
 #endif
 
 // This ensures the correct sensor types are used.
-TSensorTypes MSSUMOLRType = sensorLightInactive;
-TSensorTypes MSSUMOSRType = sensorLightActive;
+TSensorTypes LRType = sensorLightInactive;
+TSensorTypes SRType = sensorLightActive;
 
 typedef enum {
   MSSUMO_NONE = 0,
@@ -91,8 +90,8 @@ tObstacleZone MSSUMOreadZone(tSensors link) {
  * @param link the MSSUMO port number
  */
 void MSSUMOsetShortRange(tSensors link) {
-  if (SensorType[link] != MSSUMOSRType)
-    SetSensorType(link, MSSUMOSRType);
+  if (SensorType[link] != SRType)
+    SetSensorType(link, SRType);
 }
 
 
@@ -102,15 +101,15 @@ void MSSUMOsetShortRange(tSensors link) {
  * @param link the MSSUMO port number
  */
 void MSSUMOsetLongRange(tSensors link) {
-  if (SensorType[link] != MSSUMOLRType)
-    SetSensorType(link, MSSUMOLRType);
+  if (SensorType[link] != LRType)
+    SetSensorType(link, LRType);
 }
 
 
 #endif // __MSSUMO_H__
 
 /*
- * $Id: mindsensors-sumoeyes.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: mindsensors-sumoeyes.h 123 2012-11-02 16:35:15Z xander $
  */
 /* @} */
 /* @} */

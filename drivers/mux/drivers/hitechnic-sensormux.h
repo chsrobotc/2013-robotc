@@ -6,7 +6,7 @@
  */
 
 /*
- * $Id: hitechnic-sensormux.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: hitechnic-sensormux.h 123 2012-11-02 16:35:15Z xander $
  */
 
 #ifndef __HTSMUX_H__
@@ -18,8 +18,7 @@
  * drivers.
  * License: You may use this code as you wish, provided you give credit where its due.
  *
- * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.59 AND HIGHER. 
-
+ * THIS CODE WILL ONLY WORK WITH ROBOTC VERSION 3.54 AND HIGHER.
  *
  * Changelog:
  * - 0.1: Initial release, split off from common.h
@@ -438,7 +437,7 @@ bool HTSMUXconfigChannel(tMUXSensor muxsensor, tConfigParams &configparams) {
 
 #endif // __HTSMUX_H__
 /*
- * $Id: hitechnic-sensormux.h 133 2013-03-10 15:15:38Z xander $
+ * $Id: hitechnic-sensormux.h 123 2012-11-02 16:35:15Z xander $
  */
 /* @} */
 /* @} */

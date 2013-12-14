@@ -126,20 +126,36 @@ task main ()
 	N2WDisconnect();
 	N2WchillOut();
 	wait1Msec(1000);
-  if (!N2WCustomExist())
-  {
-    StopTask(updateScreen);
-    wait1Msec(50);
-    eraseDisplay();
-    PlaySound(soundException);
-    nxtDisplayCenteredBigTextLine(1, "ERROR");
-    nxtDisplayTextLine(3, "No custom profile");
-    nxtDisplayTextLine(4, "configured!!");
-    while(true) EndTimeSlice();
-  }
+	// enable DHCP
+	N2WsetDHCP(true);
+	wait1Msec(100);
+	// Disable adhoc
+	N2WsetAdHoc(false);
+	wait1Msec(100);
 
-  N2WLoad();
+	// Network Configuration
+	N2WsetMask("255.255.255.0");
+	wait1Msec(100);
+	N2WsetGateway("10.0.0.138");
+	wait1Msec(100);
+	N2WsetDNS1("8.8.8.8");
+	wait1Msec(100);
+	N2WsetDNS2("8.8.4.4");
+	wait1Msec(100);
+	N2WsetNetbiosName("NXT2WIFI1");
+	wait1Msec(100);
 
+	// SSID to connect to
+	N2WsetSSID("test");
+	wait1Msec(100);
+	// The passphrase to use
+	N2WSecurityWPA2Passphrase("pwasde08");
+	wait1Msec(100);
+	// Save this profile to the custom profile
+	N2WSave();
+	wait1Msec(500);
+	// Load the custom profile
+	N2WLoad();
 	wait1Msec(100);
 
 	N2WConnect(true);
@@ -182,12 +198,12 @@ task main ()
 
 		// Fetch the state of the Touch Sensor
 		// This value is displayed by field 0 (in0) on the page
-		currTouchState = SensorBoolean[TOUCH];
+		currTouchState = SensorValue[TOUCH];
 		if (currTouchState != prevTouchState)
 		{
-		  memset(data, 0, sizeof(data));
-			data[0] = (currTouchState) ? '1' : '0';
-			N2WwriteWS(1, 0, data, 2);
+			sprintf(dataString, "%d", currTouchState);
+			memcpy(data, dataString, strlen(dataString));
+			N2WwriteWS(1, 0, data, strlen(&data));
 			prevTouchState = currTouchState;
 			N2WchillOut();
 		}
@@ -230,7 +246,7 @@ task main ()
 
 		// Fetch the tacho count for motor B
 		// This value is displayed by field 4 (in4) on the page
-		//currEncMotorB = nMotorEncoder[MOT_LEFT];
+		currEncMotorB = nMotorEncoder[MOT_LEFT];
 		if (currEncMotorB != prevEncMotorB)
 		{
 			sprintf(dataString, "%d", currEncMotorB);
@@ -269,7 +285,7 @@ task main ()
 		sprintf(dataStrings[2], "A: %d", currEncMotorA);
 		sprintf(dataStrings[3], "B: %d", currEncMotorB);
 		sprintf(dataStrings[4], "C: %d", currEncMotorC);
-	  sprintf(tmpString, "%s | %3d", (currTouchState == 0) ? "off" : "on ", currSonarDistance);
+	sprintf(tmpString, "%s | %3d", (currTouchState == 0) ? "off" : "on ", currSonarDistance);
 		sprintf(dataStrings[1], "%s | %3d", tmpString, currDetectedColour);
 	}
 }

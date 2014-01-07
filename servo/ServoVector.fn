@@ -1,0 +1,29 @@
+#pragma once
+/*
+ * ServoVector.fn ~ void servoVector(tServoIndex servoname, int magnitude, int position)
+ * Alex Jones for team 5105 Buffalo Wings
+ *
+ * Description: 	Set the magnitude and direction for the movement of a servo
+ *
+ * Takes:			- tServoIndex servoname ~ the name of the servo to alter
+ *					- int magnitude ~ the speed at which the servo rotates
+ *					- int position ~ the position to move the servo to
+ *
+ * Returns:			NONE, no reason for there to be
+ *
+ * Uses: 			to change the position of a servo with presision
+ *
+ * Dependancies:	SetServo.fn | SetServoRate.fn
+ *
+ * ~licensed under the MIT license included in this repositiory
+*/
+
+#include "../servo/SetServo.fn"
+#include "../servo/SetServoRate.fn"
+
+void servoVector(tServoIndex servoname, int magnitude, int position)
+{
+	setServoRate(servoname, magnitude);
+	setServo(servoname, position);
+	return;
+}

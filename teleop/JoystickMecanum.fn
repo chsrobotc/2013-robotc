@@ -1,0 +1,48 @@
+#pragma once
+/*
+ * JoystickMecanum.fn ~ bool joystickMecanum(int sticknum, int min, int max, int scale)
+ * Alex Jones for team 5105 Buffalo Wings
+ *
+ * Description: 	joystick move with values modified for mecanum movements
+ *
+ * Takes:			- int sticknum ~ the number identifier for what stick to read from
+ *						- int min ~ the minimum value accepted by the joystick
+ * 						- int max ~ the highest value possible for the motor
+ * 						- int scale ~ as defined in etc/Scales.var
+ *
+ * Returns:			- (bool) true for success, false for failure
+ *
+ * Uses: 			better mobility in driving and moving without turning
+ *
+ * Dependancies:	controller/GetJoystick.fn | etc/Clamp.fn | etc/ScaleJoystick.fn | movement/SetSides.fn
+ *
+ * ~licensed under the MIT license included in this repositiory
+*/
+
+#include "../controller/GetJoystick.fn"
+#include "../etc/Clamp.fn"
+#include "../etc/ScaleJoystick.fn"
+#include "../movement/SetSides.fn"
+
+bool joystickMecanum(int sticknum, int min, int max, int scale)
+{
+	float xval = getJoystick(1, sticknum, 'x');
+	float yval = getJoystick(1, sticknum, 'y');
+
+	yval = scaleJoystick(yval, scale);
+	xval = scaleJoystick(xval, scale);
+
+	float rval = yval - xval;
+	float lval = yval + xval;
+
+	if(rval <= min && rval >= -min) rval = 0;
+	if(lval <= min && lval >= -min) lval = 0;
+
+	rval = rval * (max*0.01);
+	lval = lval * (max*0.01);
+
+	rval = clamp(rval, -100, 100);
+	lval = clamp(lval, -100, 100);
+
+	return moveMotors(rval, lval, lval, rval);
+}

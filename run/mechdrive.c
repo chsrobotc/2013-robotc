@@ -41,10 +41,10 @@
 task main()
 {
 
-	//StartTask(drive);
-	//StartTask(lift);
+	StartTask(drive);
+	StartTask(lift);
 
-//while(true) {}
+while(true) {}
 
 /*	motor[topRight] = 60;
 	wait1Msec(1000);
@@ -59,10 +59,10 @@ task main()
 	wait1Msec(1000);
 	motor[bottomRight] = 0;*/
 
-	servo[catch1] = -256;
+	/*servo[catch1] = -256;
 	servo[catch2] = 256;
 	wait1Msec(2000);
 	servo[catch1] = 0;
-	servo[catch2] = 0;
+	servo[catch2] = 0;*/
 
 }

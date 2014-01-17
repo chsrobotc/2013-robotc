@@ -58,6 +58,7 @@ while(true) {}
 	motor[bottomRight] = 60;
 	wait1Msec(1000);
 	motor[bottomRight] = 0;*/
+<<<<<<< HEAD
 	/*
 	servo[catch1] = 256;
 	servo[catch2] = -256;
@@ -65,4 +66,13 @@ while(true) {}
 	servo[catch1] = 0;
 	servo[catch2] = 0;
 */
+=======
+
+	/*servo[catch1] = -256;
+	servo[catch2] = 256;
+	wait1Msec(2000);
+	servo[catch1] = 0;
+	servo[catch2] = 0;*/
+
+>>>>>>> 58c4c94fbab8334cd41b00158d6ae981227840f9
 }

@@ -1,0 +1,25 @@
+#pragma once
+/*
+ * SetServoRate.fn ~ void setServoRate(tServoIndex indexnum, int changerate)
+ * Alex Jones for team 5105 Buffalo Wings
+ *
+ * Description: 	changes the rotation rate of a servo
+ *
+ * Takes:			- tServoIndex indexnum ~ the name of the servo
+ *					- int changerate ~ the rate of change to make the servo account for
+ *					* default is 10, use with caution
+ *
+ * Returns:			NONE
+ *
+ * Uses: 			making servos move faster/slower
+ *
+ * Dependancies:	JoystickDriver.c (external)
+ *
+ * ~licensed under the MIT license included in this repositiory
+*/
+
+void serServoRate(tServoIndex indexnum, int changerate)
+{
+	servoChangeRate[indexnum] = changerate;
+	return;
+}

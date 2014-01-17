@@ -5,10 +5,10 @@
 #pragma config(Motor,  motorA,          captureLeft,   tmotorNXT, openLoop, reversed)
 #pragma config(Motor,  motorB,          captureRight,  tmotorNXT, openLoop)
 #pragma config(Motor,  motorC,           ,             tmotorNXT, openLoop)
-#pragma config(Motor,  mtr_S1_C1_1,     topRight,      tmotorTetrix, openLoop, reversed)
-#pragma config(Motor,  mtr_S1_C1_2,     bottomRight,   tmotorTetrix, openLoop)
-#pragma config(Motor,  mtr_S1_C3_1,     topLeft,       tmotorTetrix, openLoop, reversed)
-#pragma config(Motor,  mtr_S1_C3_2,     bottomLeft,    tmotorTetrix, openLoop)
+#pragma config(Motor,  mtr_S1_C1_1,     bottomRight,   tmotorTetrix, openLoop)
+#pragma config(Motor,  mtr_S1_C1_2,     topRight,      tmotorTetrix, openLoop)
+#pragma config(Motor,  mtr_S1_C3_1,     bottomLeft,    tmotorTetrix, openLoop)
+#pragma config(Motor,  mtr_S1_C3_2,     topLeft,       tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S1_C4_1,     mainLift,      tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S1_C4_2,     riseLift,      tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S2_C1_1,     flagLift,      tmotorTetrix, openLoop)
@@ -41,10 +41,10 @@
 task main()
 {
 
-	//StartTask(drive);
-	//StartTask(lift);
+	StartTask(drive);
+	StartTask(lift);
 
-//while(true) {}
+while(true) {}
 
 /*	motor[topRight] = 60;
 	wait1Msec(1000);
@@ -58,11 +58,11 @@ task main()
 	motor[bottomRight] = 60;
 	wait1Msec(1000);
 	motor[bottomRight] = 0;*/
-
-	servo[catch1] = -256;
-	servo[catch2] = 256;
-	wait1Msec(2000);
+	/*
+	servo[catch1] = 256;
+	servo[catch2] = -256;
+	wait1Msec(10000);
 	servo[catch1] = 0;
 	servo[catch2] = 0;
-
+*/
 }

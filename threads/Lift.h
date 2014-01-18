@@ -21,16 +21,65 @@
 
 task lift()
 {
+	//initialize the topple servo to make sure we don't kill everyone
+	int catchval = 0;
+	int toppleval = 127;
 	while(true)
 	{
 		initController();
+		motor[topple] = toppleval;
+		if(checkButton(A_BUTTON, 2)
+		{
+			toppleval++;
+		}
+		else
+		{
+			toppleval = 127;
+		}
+		
+		motor[mainlift] = scaleJoystick(getJoystick(2, 1, 'y'), LINNEAR);
+		servo[sublift] = scaleJoystick(getJoystick(2, 2, 'y'), LINNEAR);
+		
+		if(checkButton(R_BUMPER))
+		{
+			motor[brush] = 100;
+		}
+		else if(chechButton(L_BUMPER))
+		{
+			motor[brush] = -100;
+		}
+		else motor[brush] = 0;
+		
+		if(checkButton(R_TRIGGER))
+		{
+			motor[grapple] = 100;
+		}
+		else if(checkButton(L_TRIGGER))
+		{
+			motor[grapple] = -100;
+		}
+		else motor[grapple] = 0;
+		
+		servo[catch] = catchval;
+		
+		if(checkButton(Y_BUTTON))
+		{
+			catchval++;
+		}
+		if(checkButton(X_BUTTON))
+		{
+			catchval--;
+		}
+		
+		
+		/*
 		// for the grabber to the pole in endgame
 		if(joy2Btn(01))
 		{
 			servo[grabber] = 255;
 		}
 
-		/*if(checkButton(3, 2))
+		if(checkButton(3, 2))
 		{
 			servo[grabber] = 255;
 		}
@@ -41,7 +90,7 @@ task lift()
 		else
 		{
 			//setGrabber(0); its a servo, so don't do this
-		}*/
+		}
 
 		// to pull ourselves up from the ground
 		if(checkButton(R_TRIGGER, 2))
@@ -77,6 +126,7 @@ task lift()
 
 		// to control the open and close of the capture mecanism
 		setCapture(scaleJoystick(getJoystick(2, 2, 'y'), LINNEAR));
+		*/
 	}
 
 

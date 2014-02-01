@@ -5,7 +5,8 @@
  *
  * Description: 	modifies the values found by a joystick into a vector movement of the robot
  *
- * Takes:			- int sticknum ~ the number identifier for what stick to read from
+ * Takes:				- int user ~ the controller number
+ *						- int sticknum ~ the number identifier for what stick to read from
  *						- int min ~ the minimum value accepted by the joystick
  * 						- int max ~ the highest value possible for the motor
  * 						- int scale ~ as defined in etc/Scales.var
@@ -22,12 +23,12 @@
 #include "../controller/GetJoystick.fn"
 #include "../etc/Clamp.fn"
 #include "../etc/ScaleJoystick.fn"
-#include "../movement/SetSides.fn"
+#include "../movement/TwoMotors.fn"
 
-bool joystickMove(int sticknum, int min, int max, int scale)
+bool joystickMove(int user, int sticknum, int min, int max, int scale)
 {
-	float xval = getJoystick(1, sticknum, 'x');
-	float yval = getJoystick(1, sticknum, 'y');
+	float xval = getJoystick(user, sticknum, 'x');
+	float yval = getJoystick(user, sticknum, 'y');
 
 	yval = scaleJoystick(yval, scale);
 	xval = scaleJoystick(xval, scale);
@@ -44,5 +45,5 @@ bool joystickMove(int sticknum, int min, int max, int scale)
 	rval = clamp(rval, -100, 100);
 	lval = clamp(lval, -100, 100);
 
-	return setSides(rval, lval);
+	return twoMotors(rval, lval);
 }

@@ -19,11 +19,6 @@ int DRIVE_JOYSTICK = 2;
 
 #include "../teleop/JoystickMove.fn"
 
-void oplift()
-{
-	if(checkButton(
-	
-}
 
 
 void setLift(int val)

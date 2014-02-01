@@ -20,9 +20,7 @@
 
 void stop()
 {
-	setMotor(topRight, 0);
-	setMotor(topLeft, 0);
-	setMotor(bottomRight, 0);
-	setMotor(bottomLeft, 0);
+	setMotor(right, 0);
+	setMotor(left, 0);
 	return;
 }

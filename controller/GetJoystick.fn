@@ -18,7 +18,7 @@
  *
  * ~licensed under the MIT license included in this repositiory
 */
-
+#include "JoystickDriver.c"
 float getJoystick(int user, int stick, char axis)
 {
 	getJoystickSettings(joystick);

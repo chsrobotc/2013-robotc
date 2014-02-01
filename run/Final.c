@@ -11,7 +11,7 @@
 #pragma config(Motor,  mtr_S1_C4_1,     mainlift,      tmotorTetrix, openLoop)
 #pragma config(Motor,  mtr_S1_C4_2,     extra,         tmotorTetrix, openLoop)
 #pragma config(Servo,  srvo_S2_C1_1,    sublift,              tServoContinuousRotation)
-#pragma config(Servo,  srvo_S2_C1_2,    catch,                tServoStandard)
+#pragma config(Servo,  srvo_S2_C1_2,    cadtch,                tServoStandard)
 #pragma config(Servo,  srvo_S2_C1_3,    topple,               tServoStandard)
 #pragma config(Servo,  srvo_S2_C1_4,    servo4,               tServoNone)
 #pragma config(Servo,  srvo_S2_C1_5,    servo5,               tServoNone)

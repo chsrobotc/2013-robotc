@@ -34,7 +34,7 @@ void wt()
 void lft(int mag, int wait)
 {
 	setMotor(liftA, mag);
-	setMotor(liftB, mag)
+	setMotor(liftB, mag);
 	wait1Msec(wait);
 	setMotor(liftA, 0);
 	setMotor(liftB, 0);
@@ -49,7 +49,7 @@ void aut()
 	go(APPROACH_MAGNITUDE, APPROACH_MAGNITUDE, APPROACH_DELTA);
 	wt();
 	lft(SWING_MAGNITUDE, SWING_DELTA);
-	wt():
+	wt();
 	lft(-SWING_MAGNITUDE, SWING_DELTA);
-	
+
 }

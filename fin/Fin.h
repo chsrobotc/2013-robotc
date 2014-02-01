@@ -16,9 +16,9 @@
 
 int LIFT_JOYSTICK = 1;
 int DRIVE_JOYSTICK = 2;
-
+#define SPIN_NAME flag
+#include "../controller/Defines.var"
 #include "../teleop/JoystickMove.fn"
-
 
 
 void setLift(int val)
@@ -60,7 +60,7 @@ void manageLift()
 {
 	if(within(-5, 5, getJoystick(LIFT_JOYSTICK, OVERRIDE, 'x')) && within(-5, 5, getJoystick(LIFT_JOYSTICK, OVERRIDE, 'y')))
 	{
-		
+
 		if(checkButton(L_TRIGGER, UNDERRIDE))
 		{
 			setLift(scaleLift(UNDERRIDE, 50));
@@ -89,7 +89,7 @@ void manageLift()
 			setLift(scaleLift(OVERRIDE, 75));
 		}
 	}
-	
+
 	if(checkButton(A_BUTTON, BOTH))
 	{
 		setMotor(SPIN_NAME, 100);
@@ -116,7 +116,7 @@ void manageMove()
 		}
 		else
 		{
-			joystickMove(UNDERRDIE, DRIVE_JOYSTICK, 5, 75, CUBE_SCALE);
+			joystickMove(UNDERRIDE, DRIVE_JOYSTICK, 5, 75, CUBE_SCALE);
 		}
 	}
 	else
@@ -134,13 +134,13 @@ void manageMove()
 			joystickMove(OVERRIDE, DRIVE_JOYSTICK, 5, 75, CUBE_SCALE);
 		}
 	}
-	
-	if(checkButton(R_BUTTON, BOTH))
+
+	if(checkButton(R_BUMPER, BOTH))
 	{
 		bFloatDuringInactiveMotorPWM = true;
 	}
 	else bFloatDuringInactiveMotorPWM = false;
-	
-	
-	
+
+
+
 }

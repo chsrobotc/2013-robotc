@@ -30,8 +30,8 @@ bool twoMotors(float r, float l)
 		return false;
 	}
 	bool success = true;
-	success = setMotor(topRight, r);
-	if(success) success = setMotor(topLeft, l);
+	success = setMotor(right, r);
+	if(success) success = setMotor(left, l);
 
 	if(!success)
 	{

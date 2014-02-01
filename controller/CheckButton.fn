@@ -21,8 +21,9 @@
 
 bool checkButton(int value, int joysticknum)
 {
+	getJoystickSettings(joystick);
 	if(joysticknum == 1) return joy1Btn(value);
 	else if(joysticknum == 2) return joy2Btn(value);
-	else if(joysticknum == 3) return joy1Btn(value) || return joy2Btn(value);
+	else if(joysticknum == 3) return joy1Btn(value) || joy2Btn(value);
 	else return false;
 }
